@@ -1,0 +1,5 @@
+Base path: 'C:/Users/User/Desktop/Games/2021.1.0b6/Editor/Data', plugins path 'C:/Users/User/Desktop/Games/2021.1.0b6/Editor/Data/PlaybackEngines'
+Cmd: initializeCompiler
+Unhandled exception: Read from shader compiler process failed: error -2147483644, 0/4 bytes read
+
+Quitting shader compiler process
