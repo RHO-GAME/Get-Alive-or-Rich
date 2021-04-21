@@ -717,7 +717,7 @@ namespace UnityEditor.Tilemaps
                     List<Texture2D> sheets = TileDragAndDrop.GetValidSpritesheets(DragAndDrop.objectReferences);
                     List<Sprite> sprites = TileDragAndDrop.GetValidSingleSprites(DragAndDrop.objectReferences);
                     List<TileBase> tiles = TileDragAndDrop.GetValidTiles(DragAndDrop.objectReferences);
-                    m_HoverData = TileDragAndDrop.CreateHoverData(sheets, sprites, tiles);
+                    m_HoverData = TileDragAndDrop.CreateHoverData(sheets, sprites, tiles, tilemap.cellLayout);
 
                     if (m_HoverData != null && m_HoverData.Count > 0)
                     {
@@ -745,15 +745,20 @@ namespace UnityEditor.Tilemaps
                         if (i >= tileSheet.Count)
                             break;
 
-                        var offset = item.Value.positionOffset - tilemap.tileAnchor;
-                        var cellSize = tilemap.cellSize;
-                        if (wasEmpty)
+                        var offset = Vector3.zero;
+                        if (item.Value.hasOffset)
                         {
-                            cellSize = item.Value.scaleFactor;
+                            offset = item.Value.positionOffset - tilemap.tileAnchor;
+
+                            var cellSize = tilemap.cellSize;
+                            if (wasEmpty)
+                            {
+                                cellSize = item.Value.scaleFactor;
+                            }
+                            offset.x *= cellSize.x;
+                            offset.y *= cellSize.y;
+                            offset.z *= cellSize.z;
                         }
-                        offset.x *= cellSize.x;
-                        offset.y *= cellSize.y;
-                        offset.z *= cellSize.z;
 
                         SetTile(tilemap
                             , targetPosition + item.Key

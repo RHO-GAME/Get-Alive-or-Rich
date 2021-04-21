@@ -54,6 +54,16 @@ namespace UnityEditor.U2D.Sprites
         void SetBones(GUID guid, List<SpriteBone> bones);
     }
 
+    public interface ISpriteNameFileIdDataProvider
+    {
+        /// <summary>Returns an IEnumerable of SpriteNameFileIdPair representing the name and file id pairs the provider has.</summary>
+        /// <returns>Name and file id pairs.</returns>
+        IEnumerable<SpriteNameFileIdPair> GetNameFileIdPairs();
+        /// <summary>Sets the data provider's current NameFileIdPair.</summary>
+        /// <param name="nameFileIdPairs">Updated IEnumerable of SpriteNameFileIdPair.</param>
+        void SetNameFileIdPairs(IEnumerable<SpriteNameFileIdPair> nameFileIdPairs);
+    }
+
     /// <summary>Data provider that provides the outline data for SpriteRect.</summary>
     /// <remarks>The outline data is used to tessellate a Sprite's mesh.</remarks>
     public interface ISpriteOutlineDataProvider

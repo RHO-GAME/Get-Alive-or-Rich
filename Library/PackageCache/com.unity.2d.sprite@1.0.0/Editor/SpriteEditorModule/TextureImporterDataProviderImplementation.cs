@@ -403,8 +403,8 @@ namespace UnityEditor.U2D.Sprites
 
         public SecondarySpriteTexture[] textures
         {
-            get { return dataProvider.secdonaryTextures; }
-            set { dataProvider.secdonaryTextures = value; }
+            get { return dataProvider.secondaryTextures; }
+            set { dataProvider.secondaryTextures = value; }
         }
 
         public static SecondarySpriteTexture[] Load(SerializedObject so)

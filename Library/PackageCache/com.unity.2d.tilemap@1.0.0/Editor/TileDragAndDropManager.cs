@@ -60,7 +60,7 @@ namespace UnityEditor.Tilemaps
                 case EventType.DragUpdated:
                     DragAndDrop.visualMode = DragAndDropVisualMode.Copy;
                     List<TileBase> tiles = TileDragAndDrop.GetValidTiles(DragAndDrop.objectReferences);
-                    instance.m_HoverData = TileDragAndDrop.CreateHoverData(null, null, tiles);
+                    instance.m_HoverData = TileDragAndDrop.CreateHoverData(null, null, tiles, activeGrid.cellLayout);
                     if (instance.m_HoverData.Count > 0)
                     {
                         Event.current.Use();
@@ -79,7 +79,10 @@ namespace UnityEditor.Tilemaps
                         {
                             Vector3Int position = new Vector3Int(mouseGridPosition.x + item.Key.x, mouseGridPosition.y + item.Key.y, 0);
                             tilemap.SetTile(position, tileSheet[i++]);
-                            tilemap.SetTransformMatrix(position, Matrix4x4.TRS(item.Value.positionOffset - tilemap.tileAnchor, Quaternion.identity, Vector3.one));
+                            tilemap.SetTransformMatrix(position, Matrix4x4.TRS(
+                                item.Value.hasOffset ? item.Value.positionOffset - tilemap.tileAnchor : Vector3.zero
+                                , Quaternion.identity
+                                , Vector3.one));
                         }
                         instance.m_HoverData = null;
                         GUI.changed = true;

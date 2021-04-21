@@ -23,6 +23,8 @@ Solver2DMenuAttribute
 CCD2D
 FABRIKChain2D
 Limb
+AssetModificationProcessor
+
 Sysroot
 UnityEditor
 LinuxStandalone
@@ -44,8 +46,11 @@ ChannelClientInfo
 ProcessService
 NavMeshBuilder
 NavMeshVisualizationSettings
-CollectImportedDependenciesAttribute
+PrefabStage
 Experimental
+SceneManagement
+PrefabStageUtility
+CollectImportedDependenciesAttribute
 AssetImporters
 AssetImportContext
 SpriteImportData

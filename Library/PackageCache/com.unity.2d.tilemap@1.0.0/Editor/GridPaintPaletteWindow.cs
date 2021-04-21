@@ -8,7 +8,6 @@ using UnityEngine.Tilemaps;
 using Event = UnityEngine.Event;
 using Object = UnityEngine.Object;
 
-using UnityEditor.Experimental.SceneManagement;
 using UnityEditor.SceneManagement;
 
 namespace UnityEditor.Tilemaps

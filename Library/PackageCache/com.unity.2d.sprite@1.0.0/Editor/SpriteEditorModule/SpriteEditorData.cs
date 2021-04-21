@@ -120,4 +120,31 @@ namespace UnityEditor.U2D.Sprites
             internalID = spriteRect.internalID;
         }
     }
+
+    internal class SpriteNameFileIdPairExt : SpriteNameFileIdPair
+    {
+        private const string k_NameField = "first";
+        private const string k_fileIdField = "second";
+
+        internal SpriteNameFileIdPairExt(string name, long fileId) : base(name, fileId)
+        {}
+
+        internal SpriteNameFileIdPairExt(SerializedProperty sp)
+        {
+            name = sp.FindPropertyRelative(k_NameField).stringValue;
+            fileId = sp.FindPropertyRelative(k_fileIdField).longValue;
+        }
+
+        internal SpriteNameFileIdPairExt(SpriteNameFileIdPair pair)
+        {
+            name = pair.name;
+            fileId = pair.fileId;
+        }
+
+        public void Apply(SerializedProperty sp)
+        {
+            sp.FindPropertyRelative(k_NameField).stringValue = name;
+            sp.FindPropertyRelative(k_fileIdField).longValue = fileId;
+        }
+    }
 }

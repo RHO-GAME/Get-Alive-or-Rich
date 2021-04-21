@@ -503,7 +503,12 @@ namespace UnityEngine.EventSystems
 #if UNITY_EDITOR
             if (Application.isPlaying)
             {
-                int eventSystemCount = m_EventSystems.Count;
+                int eventSystemCount = 0;
+                for (int i = 0; i < m_EventSystems.Count; i++)
+                {
+                    if (m_EventSystems[i].GetType() == typeof(EventSystem))
+                        eventSystemCount++;
+                }
 
                 if (eventSystemCount > 1)
                     Debug.LogWarning("There are " + eventSystemCount + " event systems in the scene. Please ensure there is always exactly one event system in the scene");

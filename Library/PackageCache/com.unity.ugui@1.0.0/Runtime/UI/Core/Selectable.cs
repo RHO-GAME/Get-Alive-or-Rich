@@ -565,6 +565,14 @@ namespace UnityEngine.UI
             m_EnableCalled = false;
         }
 
+        void OnApplicationFocus(bool hasFocus)
+        {
+            if (!hasFocus && IsPressed())
+            {
+                InstantClearState();
+            }
+        }
+
 #if UNITY_EDITOR
         protected override void OnValidate()
         {

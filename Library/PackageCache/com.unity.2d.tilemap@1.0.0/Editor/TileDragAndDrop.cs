@@ -37,25 +37,6 @@ namespace UnityEditor.Tilemaps
             return sprites;
         }
 
-        private static bool AllSpritesAreSameSize(List<Sprite> sprites)
-        {
-            if (sprites.Count == 0)
-                return false;
-            if (sprites.Count == 1)
-                return true;
-
-            // If sprites are different sizes (not grid sliced). So we abort.
-            for (int i = 1; i < sprites.Count - 1; i++)
-            {
-                if ((int)sprites[i].rect.width != (int)sprites[i + 1].rect.width ||
-                    (int)sprites[i].rect.height != (int)sprites[i + 1].rect.height)
-                {
-                    return false;
-                }
-            }
-            return true;
-        }
-
         private static bool AllSpritesAreSameSizeOrMultiples(List<Sprite> sprites)
         {
             if (sprites.Count == 0)
@@ -83,11 +64,15 @@ namespace UnityEditor.Tilemaps
             return true;
         }
 
-        // Input:
-        // sheetTextures -> textures containing 2-N equal sized Sprites)
-        // singleSprites -> All the leftover Sprites that were in same texture but different sizes or just dragged in as Sprite
-        // tiles -> Just plain tiles
-        public static Dictionary<Vector2Int, TileDragAndDropHoverData> CreateHoverData(List<Texture2D> sheetTextures, List<Sprite> singleSprites, List<TileBase> tiles)
+        /// <summary>
+        /// Converts Objects that can be laid out in the Tile Palette and organises them for placement into a given CellLayout
+        /// </summary>
+        /// <param name="sheetTextures">Textures containing 2-N equal sized Sprites</param>
+        /// <param name="singleSprites">All the leftover Sprites that were in same texture but different sizes or just dragged in as Sprite</param>
+        /// <param name="tiles">Just plain tiles</param>
+        /// <param name="cellLayout">Cell Layout to place objects on</param>
+        /// <returns>Dictionary mapping the positions of the Objects on the Grid Layout with details of how to place the Objects</returns>
+        public static Dictionary<Vector2Int, TileDragAndDropHoverData> CreateHoverData(List<Texture2D> sheetTextures, List<Sprite> singleSprites, List<TileBase> tiles, GridLayout.CellLayout cellLayout)
         {
             Dictionary<Vector2Int, TileDragAndDropHoverData> result = new Dictionary<Vector2Int, TileDragAndDropHoverData>();
 
@@ -98,7 +83,7 @@ namespace UnityEditor.Tilemaps
             {
                 foreach (Texture2D sheetTexture in sheetTextures)
                 {
-                    Dictionary<Vector2Int, TileDragAndDropHoverData> sheet = CreateHoverData(sheetTexture);
+                    Dictionary<Vector2Int, TileDragAndDropHoverData> sheet = CreateHoverData(sheetTexture, cellLayout);
                     foreach (KeyValuePair<Vector2Int, TileDragAndDropHoverData> item in sheet)
                     {
                         result.Add(item.Key + currentPosition, item.Value);
@@ -266,9 +251,22 @@ namespace UnityEditor.Tilemaps
             positionOffset = position - cellPosition;
         }
 
+        // Turn texture pixel position into integer isometric grid position based on cell size and offset size
+        private static void GetIsometricGridPosition(Sprite sprite, Vector2Int cellPixelSize, Vector2Int offsetSize, out Vector2Int cellPosition)
+        {
+            var offsetPosition = new Vector2(sprite.rect.center.x - offsetSize.x, sprite.rect.center.y - offsetSize.y);
+            var cellStride = new Vector2(cellPixelSize.x, cellPixelSize.y) * 0.5f;
+            var invCellStride = new Vector2(1.0f / cellStride.x, 1.0f / cellStride.y);
+
+            var position = offsetPosition * invCellStride;
+            position.y = (position.y - position.x) * 0.5f;
+            position.x += position.y;
+            cellPosition = new Vector2Int(Mathf.FloorToInt(position.x), Mathf.FloorToInt(position.y));
+        }
+
         // Organizes all the sprites in a single texture nicely on a 2D "table" based on their original texture position
         // Only call this with spritesheet with all Sprites equal size
-        public static Dictionary<Vector2Int, TileDragAndDropHoverData> CreateHoverData(Texture2D sheet)
+        public static Dictionary<Vector2Int, TileDragAndDropHoverData> CreateHoverData(Texture2D sheet, GridLayout.CellLayout cellLayout)
         {
             Dictionary<Vector2Int, TileDragAndDropHoverData> result = new Dictionary<Vector2Int, TileDragAndDropHoverData>();
             List<Sprite> sprites = GetSpritesFromTexture(sheet);
@@ -280,13 +278,41 @@ namespace UnityEditor.Tilemaps
             // Get Padding
             Vector2Int paddingSize = EstimateGridPaddingSize(sprites, cellPixelSize, offsetSize);
 
-            foreach (Sprite sprite in sprites)
+            if ((cellLayout == GridLayout.CellLayout.Isometric
+                 || cellLayout == GridLayout.CellLayout.IsometricZAsY)
+                && (HasSpriteRectOverlaps(sprites)))
             {
-                GetGridPosition(sprite, cellPixelSize, offsetSize, paddingSize, out Vector2Int position, out Vector3 offset);
-                result[position] = new TileDragAndDropHoverData(sprite, offset, (Vector2)cellPixelSize / sprite.pixelsPerUnit);
+                foreach (Sprite sprite in sprites)
+                {
+                    GetIsometricGridPosition(sprite, cellPixelSize, offsetSize, out Vector2Int position);
+                    result[position] = new TileDragAndDropHoverData(sprite, Vector3.zero, (Vector2)cellPixelSize / sprite.pixelsPerUnit, false);
+                }
+            }
+            else
+            {
+                foreach (Sprite sprite in sprites)
+                {
+                    GetGridPosition(sprite, cellPixelSize, offsetSize, paddingSize, out Vector2Int position, out Vector3 offset);
+                    result[position] = new TileDragAndDropHoverData(sprite, offset, (Vector2)cellPixelSize / sprite.pixelsPerUnit);
+                }
             }
 
             return result;
+        }
+
+        private static bool HasSpriteRectOverlaps(IReadOnlyList<Sprite> sprites)
+        {
+            var count = sprites.Count;
+            for (int i = 0; i < count; i++)
+            {
+                var rect = sprites[i].rect;
+                for (int j = i + 1; j < count; j++)
+                {
+                    if (rect.Overlaps(sprites[j].rect))
+                        return true;
+                }
+            }
+            return false;
         }
 
         internal static string GenerateUniqueNameForNamelessSprite(Sprite sprite, HashSet<string> uniqueNames, ref int count)

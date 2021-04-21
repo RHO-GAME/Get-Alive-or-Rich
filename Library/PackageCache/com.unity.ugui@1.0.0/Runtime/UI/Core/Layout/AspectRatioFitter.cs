@@ -224,7 +224,7 @@ namespace UnityEngine.UI
         public bool IsComponentValidOnObject()
         {
             Canvas canvas = gameObject.GetComponent<Canvas>();
-            if (canvas && canvas.renderMode != RenderMode.WorldSpace)
+            if (canvas && canvas.isRootCanvas && canvas.renderMode != RenderMode.WorldSpace)
             {
                 return false;
             }

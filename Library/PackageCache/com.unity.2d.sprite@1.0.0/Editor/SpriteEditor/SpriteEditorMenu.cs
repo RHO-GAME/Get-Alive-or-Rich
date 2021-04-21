@@ -96,6 +96,8 @@ namespace UnityEditor.U2D.Sprites
             public readonly GUIContent customPivotLabel = EditorGUIUtility.TrTextContent("Custom Pivot");
             public readonly GUIContent keepEmptyRectsLabel = EditorGUIUtility.TrTextContent("Keep Empty Rects");
             public readonly GUIContent isAlternateLabel = EditorGUIUtility.TrTextContent("Is Alternate");
+
+            public readonly string deleteExistingMessage = L10n.Tr("The Delete Existing slicing method will destroy the current Sprites and recreate them from scratch, once you select Apply. This operation could cause the Sprite references to get lost. Consider using Smart or Safe slicing methods instead.");
         }
 
         internal List<Rect> GetPotentialRects()
@@ -142,7 +144,7 @@ namespace UnityEditor.U2D.Sprites
             m_TextureDataProvider = dataProvider;
 
             buttonRect = GUIUtility.GUIToScreenRect(buttonRect);
-            float windowHeight = 195;
+            const float windowHeight = 255;
             var windowSize = new Vector2(300, windowHeight);
             ShowAsDropDown(buttonRect, windowSize);
 
@@ -213,6 +215,8 @@ namespace UnityEditor.U2D.Sprites
             {
                 Undo.RegisterCompleteObjectUndo(s_Setting, "Change slicing type");
                 s_Setting.slicingType = slicingType;
+
+                UpdateToDefaultAutoSliceMethod();
                 RectSettingsDirty();
             }
             switch (slicingType)
@@ -240,12 +244,21 @@ namespace UnityEditor.U2D.Sprites
                 s_Setting.autoSlicingMethod = slicingMethod;
             }
 
+            if (s_Setting.autoSlicingMethod == (int)SpriteFrameModule.AutoSlicingMethod.DeleteAll)
+                EditorGUILayout.HelpBox(s_Styles.deleteExistingMessage, MessageType.Warning);
+
             GUILayout.FlexibleSpace();
             GUILayout.BeginHorizontal();
             GUILayout.Space(EditorGUIUtility.labelWidth + 4);
             if (GUILayout.Button(s_Styles.sliceButtonLabel))
                 DoSlicing();
+
             GUILayout.EndHorizontal();
+        }
+
+        private static void UpdateToDefaultAutoSliceMethod()
+        {
+            s_Setting.autoSlicingMethod = (int)SpriteFrameModule.AutoSlicingMethod.DeleteAll;
         }
 
         private void DoSlicing()
