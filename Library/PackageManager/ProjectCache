@@ -1,33 +1,33 @@
 m_ProjectFiles:
   m_ManifestFileStatus:
-    m_FilePath: A:/Projects/Get-Alive-or-Rich/Packages/manifest.json
+    m_FilePath: C:/Users/User/Documents/GitHub/Get-Alive-or-Rich/Packages/manifest.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637544487148637810
-    m_Hash: 1000276200
+      ticks: 637545975511372302
+    m_Hash: 2729564618
   m_LockFileStatus:
-    m_FilePath: A:/Projects/Get-Alive-or-Rich/Packages/packages-lock.json
+    m_FilePath: C:/Users/User/Documents/GitHub/Get-Alive-or-Rich/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637544487673546634
-    m_Hash: 1978655880
+      ticks: 637545975981009484
+    m_Hash: 3983776335
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
   m_LocalFileStatus: []
-m_ProjectPath: A:/Projects/Get-Alive-or-Rich/Packages
-m_EditorVersion: 2021.2.0a9 (5be3997fdbde)
+m_ProjectPath: C:/Users/User/Documents/GitHub/Get-Alive-or-Rich/Packages
+m_EditorVersion: 2021.2.0a13 (71a161db37e2)
 m_ResolvedPackages:
-- packageId: com.unity.2d.animation@5.0.3
+- packageId: com.unity.2d.animation@6.0.1
   testable: 0
   isDirectDependency: 1
-  version: 5.0.3
+  version: 6.0.1
   source: 1
-  resolvedPath: A:\Projects\Get-Alive-or-Rich\Library\PackageCache\com.unity.2d.animation@5.0.3
+  resolvedPath: C:\Users\User\Documents\GitHub\Get-Alive-or-Rich\Library\PackageCache\com.unity.2d.animation@6.0.1
   assetPath: Packages/com.unity.2d.animation
   name: com.unity.2d.animation
   displayName: 2D Animation
@@ -37,8 +37,12 @@ m_ResolvedPackages:
     url: 
   category: 2D
   type: 
-  description: 2D Animation provides all the necessary tooling and runtime components
+  description: '2D Animation provides all the necessary tooling and runtime components
     for skeletal animation using Sprites.
+
+
+    Documentation for v6.0 is currently
+    being updated.'
   status: 4
   errors: []
   versions:
@@ -98,15 +102,11 @@ m_ResolvedPackages:
     - 6.0.0-pre.2
     - 6.0.1
     compatible:
-    - 5.0.3
-    - 5.0.4
-    - 6.0.0-pre.1
-    - 6.0.0-pre.2
     - 6.0.1
-    verified: 5.0.4
+    verified: 6.0.1
   dependencies:
   - name: com.unity.2d.common
-    version: 4.0.3
+    version: 5.0.0
   - name: com.unity.mathematics
     version: 1.1.0
   - name: com.unity.2d.sprite
@@ -117,7 +117,7 @@ m_ResolvedPackages:
     version: 1.0.0
   resolvedDependencies:
   - name: com.unity.2d.common
-    version: 4.0.3
+    version: 5.0.0
   - name: com.unity.2d.sprite
     version: 1.0.0
   - name: com.unity.modules.uielements
@@ -146,26 +146,24 @@ m_ResolvedPackages:
     capabilities: 7
   hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 637408845570000000
+  datePublishedTicks: 637526396800000000
   documentationUrl: 
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/2d.git
-    revision: c97def465b1932276762fc13f4cfee58da99d5e9
+    revision: 1de540a091021db4de462f30f9a458120ea465ae
     path: 
   unityLifecycle:
     version: 
     nextVersion: 
-- packageId: com.unity.2d.pixel-perfect@4.0.1
+- packageId: com.unity.2d.pixel-perfect@5.0.0
   testable: 0
   isDirectDependency: 1
-  version: 4.0.1
+  version: 5.0.0
   source: 1
-  resolvedPath: A:\Projects\Get-Alive-or-Rich\Library\PackageCache\com.unity.2d.pixel-perfect@4.0.1
+  resolvedPath: C:\Users\User\Documents\GitHub\Get-Alive-or-Rich\Library\PackageCache\com.unity.2d.pixel-perfect@5.0.0
   assetPath: Packages/com.unity.2d.pixel-perfect
   name: com.unity.2d.pixel-perfect
   displayName: 2D Pixel Perfect
@@ -204,11 +202,8 @@ m_ResolvedPackages:
     - 5.0.0-pre.2
     - 5.0.0
     compatible:
-    - 4.0.1
-    - 5.0.0-pre.1
-    - 5.0.0-pre.2
     - 5.0.0
-    verified: 4.0.1
+    verified: 5.0.0
   dependencies: []
   resolvedDependencies: []
   keywords:
@@ -225,26 +220,24 @@ m_ResolvedPackages:
     capabilities: 7
   hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 637328350910000000
+  datePublishedTicks: 637526400420000000
   documentationUrl: 
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/2d.git
-    revision: 7d7470f4ca0ea8353d4c9640b3b6ae9d1ebd9c1d
+    revision: 82ee1598c2f1270bc1081c1f908364e528335bd5
     path: 
   unityLifecycle:
     version: 
     nextVersion: 
-- packageId: com.unity.2d.psdimporter@4.0.2
+- packageId: com.unity.2d.psdimporter@5.0.1
   testable: 0
   isDirectDependency: 1
-  version: 4.0.2
+  version: 5.0.1
   source: 1
-  resolvedPath: A:\Projects\Get-Alive-or-Rich\Library\PackageCache\com.unity.2d.psdimporter@4.0.2
+  resolvedPath: C:\Users\User\Documents\GitHub\Get-Alive-or-Rich\Library\PackageCache\com.unity.2d.psdimporter@5.0.1
   assetPath: Packages/com.unity.2d.psdimporter
   name: com.unity.2d.psdimporter
   displayName: 2D PSD Importer
@@ -254,9 +247,13 @@ m_ResolvedPackages:
     url: 
   category: 2D
   type: 
-  description: A ScriptedImporter for importing Adobe Photoshop PSB (Photoshop Big)
+  description: 'A ScriptedImporter for importing Adobe Photoshop PSB (Photoshop Big)
     file format. The ScriptedImporter is currently targeted for users who wants to
     create multi Sprite character animation using Unity 2D Animation Package.
+
+
+    Documentation
+    for v5.0 is currently being updated.'
   status: 4
   errors: []
   versions:
@@ -294,21 +291,18 @@ m_ResolvedPackages:
     - 5.0.0-pre.2
     - 5.0.1
     compatible:
-    - 4.0.2
-    - 5.0.0-pre.1
-    - 5.0.0-pre.2
     - 5.0.1
-    verified: 4.0.2
+    verified: 5.0.1
   dependencies:
   - name: com.unity.2d.common
-    version: 4.0.2
+    version: 5.0.0
   - name: com.unity.2d.animation
-    version: 5.0.2
+    version: 6.0.1
   - name: com.unity.2d.sprite
     version: 1.0.0
   resolvedDependencies:
   - name: com.unity.2d.common
-    version: 4.0.3
+    version: 5.0.0
   - name: com.unity.2d.sprite
     version: 1.0.0
   - name: com.unity.modules.uielements
@@ -322,7 +316,7 @@ m_ResolvedPackages:
   - name: com.unity.modules.uielementsnative
     version: 1.0.0
   - name: com.unity.2d.animation
-    version: 5.0.3
+    version: 6.0.1
   - name: com.unity.mathematics
     version: 1.2.1
   - name: com.unity.modules.animation
@@ -340,16 +334,14 @@ m_ResolvedPackages:
     capabilities: 7
   hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 637366443480000000
+  datePublishedTicks: 637526398240000000
   documentationUrl: 
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/2d.git
-    revision: 4e96f68a7587d87b4fee15d6f88a5d86c2afa9aa
+    revision: 1de540a091021db4de462f30f9a458120ea465ae
     path: 
   unityLifecycle:
     version: 
@@ -359,7 +351,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: A:\Projects\Get-Alive-or-Rich\Library\PackageCache\com.unity.2d.sprite@1.0.0
+  resolvedPath: C:\Users\User\Documents\GitHub\Get-Alive-or-Rich\Library\PackageCache\com.unity.2d.sprite@1.0.0
   assetPath: Packages/com.unity.2d.sprite
   name: com.unity.2d.sprite
   displayName: 2D Sprite
@@ -394,8 +386,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -408,12 +398,12 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 
     nextVersion: 
-- packageId: com.unity.2d.spriteshape@5.1.0
+- packageId: com.unity.2d.spriteshape@6.0.0
   testable: 0
   isDirectDependency: 1
-  version: 5.1.0
+  version: 6.0.0
   source: 1
-  resolvedPath: A:\Projects\Get-Alive-or-Rich\Library\PackageCache\com.unity.2d.spriteshape@5.1.0
+  resolvedPath: C:\Users\User\Documents\GitHub\Get-Alive-or-Rich\Library\PackageCache\com.unity.2d.spriteshape@6.0.0
   assetPath: Packages/com.unity.2d.spriteshape
   name: com.unity.2d.spriteshape
   displayName: 2D SpriteShape
@@ -478,26 +468,22 @@ m_ResolvedPackages:
     - 6.0.0-pre.2
     - 6.0.0
     compatible:
-    - 5.1.0
-    - 5.1.1
-    - 6.0.0-pre.1
-    - 6.0.0-pre.2
     - 6.0.0
-    verified: 5.1.1
+    verified: 6.0.0
   dependencies:
   - name: com.unity.mathematics
     version: 1.1.0
   - name: com.unity.2d.common
-    version: 4.0.3
+    version: 5.0.0
   - name: com.unity.2d.path
-    version: 4.0.1
+    version: 5.0.0
   - name: com.unity.modules.physics2d
     version: 1.0.0
   resolvedDependencies:
   - name: com.unity.mathematics
     version: 1.2.1
   - name: com.unity.2d.common
-    version: 4.0.3
+    version: 5.0.0
   - name: com.unity.2d.sprite
     version: 1.0.0
   - name: com.unity.modules.uielements
@@ -511,7 +497,7 @@ m_ResolvedPackages:
   - name: com.unity.modules.uielementsnative
     version: 1.0.0
   - name: com.unity.2d.path
-    version: 4.0.1
+    version: 5.0.0
   - name: com.unity.modules.physics2d
     version: 1.0.0
   keywords:
@@ -530,16 +516,14 @@ m_ResolvedPackages:
     capabilities: 7
   hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 637408852810000000
+  datePublishedTicks: 637526400040000000
   documentationUrl: 
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/2d.git
-    revision: c97def465b1932276762fc13f4cfee58da99d5e9
+    revision: 82ee1598c2f1270bc1081c1f908364e528335bd5
     path: 
   unityLifecycle:
     version: 
@@ -549,7 +533,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: A:\Projects\Get-Alive-or-Rich\Library\PackageCache\com.unity.2d.tilemap@1.0.0
+  resolvedPath: C:\Users\User\Documents\GitHub\Get-Alive-or-Rich\Library\PackageCache\com.unity.2d.tilemap@1.0.0
   assetPath: Packages/com.unity.2d.tilemap
   name: com.unity.2d.tilemap
   displayName: 2D Tilemap Editor
@@ -583,8 +567,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -602,7 +584,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.3.9
   source: 1
-  resolvedPath: A:\Projects\Get-Alive-or-Rich\Library\PackageCache\com.unity.collab-proxy@1.3.9
+  resolvedPath: C:\Users\User\Documents\GitHub\Get-Alive-or-Rich\Library\PackageCache\com.unity.collab-proxy@1.3.9
   assetPath: Packages/com.unity.collab-proxy
   name: com.unity.collab-proxy
   displayName: Unity Collaborate
@@ -681,8 +663,6 @@ m_ResolvedPackages:
     capabilities: 7
   hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 637314349270000000
   documentationUrl: 
@@ -700,7 +680,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 3.0.5
   source: 1
-  resolvedPath: A:\Projects\Get-Alive-or-Rich\Library\PackageCache\com.unity.ide.rider@3.0.5
+  resolvedPath: C:\Users\User\Documents\GitHub\Get-Alive-or-Rich\Library\PackageCache\com.unity.ide.rider@3.0.5
   assetPath: Packages/com.unity.ide.rider
   name: com.unity.ide.rider
   displayName: JetBrains Rider Editor
@@ -755,8 +735,6 @@ m_ResolvedPackages:
     capabilities: 7
   hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 637502896060000000
   documentationUrl: 
@@ -774,7 +752,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 2.0.7
   source: 1
-  resolvedPath: A:\Projects\Get-Alive-or-Rich\Library\PackageCache\com.unity.ide.visualstudio@2.0.7
+  resolvedPath: C:\Users\User\Documents\GitHub\Get-Alive-or-Rich\Library\PackageCache\com.unity.ide.visualstudio@2.0.7
   assetPath: Packages/com.unity.ide.visualstudio
   name: com.unity.ide.visualstudio
   displayName: Visual Studio Editor
@@ -828,8 +806,6 @@ m_ResolvedPackages:
     capabilities: 7
   hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 637486638490000000
   documentationUrl: 
@@ -847,7 +823,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.2.3
   source: 1
-  resolvedPath: A:\Projects\Get-Alive-or-Rich\Library\PackageCache\com.unity.ide.vscode@1.2.3
+  resolvedPath: C:\Users\User\Documents\GitHub\Get-Alive-or-Rich\Library\PackageCache\com.unity.ide.vscode@1.2.3
   assetPath: Packages/com.unity.ide.vscode
   name: com.unity.ide.vscode
   displayName: Visual Studio Code Editor
@@ -890,8 +866,6 @@ m_ResolvedPackages:
     capabilities: 7
   hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 637394922300000000
   documentationUrl: 
@@ -909,7 +883,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.2.1
   source: 1
-  resolvedPath: A:\Projects\Get-Alive-or-Rich\Library\PackageCache\com.unity.mobile.android-logcat@1.2.1
+  resolvedPath: C:\Users\User\Documents\GitHub\Get-Alive-or-Rich\Library\PackageCache\com.unity.mobile.android-logcat@1.2.1
   assetPath: Packages/com.unity.mobile.android-logcat
   name: com.unity.mobile.android-logcat
   displayName: Android Logcat
@@ -957,8 +931,6 @@ m_ResolvedPackages:
     capabilities: 7
   hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 637479648140000000
   documentationUrl: 
@@ -976,7 +948,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.3.2
   source: 1
-  resolvedPath: A:\Projects\Get-Alive-or-Rich\Library\PackageCache\com.unity.mobile.notifications@1.3.2
+  resolvedPath: C:\Users\User\Documents\GitHub\Get-Alive-or-Rich\Library\PackageCache\com.unity.mobile.notifications@1.3.2
   assetPath: Packages/com.unity.mobile.notifications
   name: com.unity.mobile.notifications
   displayName: Mobile Notifications
@@ -1048,8 +1020,6 @@ m_ResolvedPackages:
     capabilities: 7
   hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 637411581370000000
   documentationUrl: 
@@ -1067,7 +1037,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.1.24
   source: 1
-  resolvedPath: A:\Projects\Get-Alive-or-Rich\Library\PackageCache\com.unity.test-framework@1.1.24
+  resolvedPath: C:\Users\User\Documents\GitHub\Get-Alive-or-Rich\Library\PackageCache\com.unity.test-framework@1.1.24
   assetPath: Packages/com.unity.test-framework
   name: com.unity.test-framework
   displayName: Test Framework
@@ -1139,8 +1109,6 @@ m_ResolvedPackages:
     capabilities: 7
   hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 637505702940000000
   documentationUrl: 
@@ -1153,12 +1121,12 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 
     nextVersion: 
-- packageId: com.unity.textmeshpro@3.0.3
+- packageId: com.unity.textmeshpro@3.0.4
   testable: 0
   isDirectDependency: 1
-  version: 3.0.3
+  version: 3.0.4
   source: 1
-  resolvedPath: A:\Projects\Get-Alive-or-Rich\Library\PackageCache\com.unity.textmeshpro@3.0.3
+  resolvedPath: C:\Users\User\Documents\GitHub\Get-Alive-or-Rich\Library\PackageCache\com.unity.textmeshpro@3.0.4
   assetPath: Packages/com.unity.textmeshpro
   name: com.unity.textmeshpro
   displayName: TextMeshPro
@@ -1228,6 +1196,7 @@ m_ResolvedPackages:
     - 1.5.1
     - 1.5.3
     - 1.5.4
+    - 1.5.5
     - 2.0.0
     - 2.0.1-preview.1
     - 2.0.1
@@ -1247,6 +1216,7 @@ m_ResolvedPackages:
     - 2.1.1
     - 2.1.3
     - 2.1.4
+    - 2.1.5
     - 3.0.0-preview.1
     - 3.0.0-preview.3
     - 3.0.0-preview.4
@@ -1262,10 +1232,11 @@ m_ResolvedPackages:
     - 3.0.1
     - 3.0.3
     - 3.0.4
+    - 3.0.5
     compatible:
-    - 3.0.3
     - 3.0.4
-    verified: 3.0.4
+    - 3.0.5
+    verified: 3.0.5
   dependencies:
   - name: com.unity.ugui
     version: 1.0.0
@@ -1291,26 +1262,24 @@ m_ResolvedPackages:
     capabilities: 7
   hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 637394911680000000
+  datePublishedTicks: 637492944820000000
   documentationUrl: 
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/com.unity.textmeshpro.git
-    revision: 648406226df6c4f28a0f64eaab42ddc3db70c475
+    revision: e2f8dffb26de9a130d5b2140d83891d9a7825330
     path: 
   unityLifecycle:
     version: 
     nextVersion: 
-- packageId: com.unity.timeline@1.6.0-pre.1
+- packageId: com.unity.timeline@1.6.0-pre.3
   testable: 0
   isDirectDependency: 1
-  version: 1.6.0-pre.1
+  version: 1.6.0-pre.3
   source: 1
-  resolvedPath: A:\Projects\Get-Alive-or-Rich\Library\PackageCache\com.unity.timeline@1.6.0-pre.1
+  resolvedPath: C:\Users\User\Documents\GitHub\Get-Alive-or-Rich\Library\PackageCache\com.unity.timeline@1.6.0-pre.3
   assetPath: Packages/com.unity.timeline
   name: com.unity.timeline
   displayName: Timeline
@@ -1385,7 +1354,6 @@ m_ResolvedPackages:
     - 1.6.0-pre.1
     - 1.6.0-pre.3
     compatible:
-    - 1.6.0-pre.1
     - 1.6.0-pre.3
     verified: 1.6.0-pre.3
   dependencies:
@@ -1421,16 +1389,14 @@ m_ResolvedPackages:
     capabilities: 7
   hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 637463394720000000
+  datePublishedTicks: 637510729450000000
   documentationUrl: 
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/com.unity.timeline.git
-    revision: 775bafa3ba4389d81b5636aea3b43a0f31645af7
+    revision: a2fc4dc4c591301c512b9fa914733a72ab6c447e
     path: 
   unityLifecycle:
     version: 
@@ -1440,7 +1406,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: A:\Projects\Get-Alive-or-Rich\Library\PackageCache\com.unity.ugui@1.0.0
+  resolvedPath: C:\Users\User\Documents\GitHub\Get-Alive-or-Rich\Library\PackageCache\com.unity.ugui@1.0.0
   assetPath: Packages/com.unity.ugui
   name: com.unity.ugui
   displayName: Unity UI
@@ -1486,8 +1452,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -1500,12 +1464,12 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 
     nextVersion: 
-- packageId: com.unity.visualscripting@1.5.1
+- packageId: com.unity.visualscripting@1.5.2
   testable: 0
   isDirectDependency: 1
-  version: 1.5.1
+  version: 1.5.2
   source: 1
-  resolvedPath: A:\Projects\Get-Alive-or-Rich\Library\PackageCache\com.unity.visualscripting@1.5.1
+  resolvedPath: C:\Users\User\Documents\GitHub\Get-Alive-or-Rich\Library\PackageCache\com.unity.visualscripting@1.5.2
   assetPath: Packages/com.unity.visualscripting
   name: com.unity.visualscripting
   displayName: Visual Scripting
@@ -1532,10 +1496,11 @@ m_ResolvedPackages:
     - 1.5.1
     - 1.5.2
     - 1.6.0-pre.3
+    - 1.6.0
     compatible:
-    - 1.5.1
     - 1.5.2
     - 1.6.0-pre.3
+    - 1.6.0
     verified: 1.5.2
   dependencies:
   - name: com.unity.ugui
@@ -1581,16 +1546,14 @@ m_ResolvedPackages:
     capabilities: 7
   hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 637498670160000000
+  datePublishedTicks: 637509974430000000
   documentationUrl: 
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/com.unity.visualscripting.git
-    revision: 172aa3d6ce1d6e66e3bd3a7b03b25fd93262d4ef
+    revision: 49dd7fc937ed1aff82fd8e8a624ba671cc83f6e5
     path: 
   unityLifecycle:
     version: 
@@ -1600,7 +1563,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: A:\Projects\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.ai@1.0.0
+  resolvedPath: C:\Users\User\Documents\GitHub\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.ai@1.0.0
   assetPath: Packages/com.unity.modules.ai
   name: com.unity.modules.ai
   displayName: AI
@@ -1632,8 +1595,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -1651,7 +1612,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: A:\Projects\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.androidjni@1.0.0
+  resolvedPath: C:\Users\User\Documents\GitHub\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.androidjni@1.0.0
   assetPath: Packages/com.unity.modules.androidjni
   name: com.unity.modules.androidjni
   displayName: Android JNI
@@ -1682,8 +1643,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -1701,7 +1660,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: A:\Projects\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.animation@1.0.0
+  resolvedPath: C:\Users\User\Documents\GitHub\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.animation@1.0.0
   assetPath: Packages/com.unity.modules.animation
   name: com.unity.modules.animation
   displayName: Animation
@@ -1733,8 +1692,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -1752,7 +1709,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: A:\Projects\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.assetbundle@1.0.0
+  resolvedPath: C:\Users\User\Documents\GitHub\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.assetbundle@1.0.0
   assetPath: Packages/com.unity.modules.assetbundle
   name: com.unity.modules.assetbundle
   displayName: Asset Bundle
@@ -1784,8 +1741,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -1803,7 +1758,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: A:\Projects\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.audio@1.0.0
+  resolvedPath: C:\Users\User\Documents\GitHub\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.audio@1.0.0
   assetPath: Packages/com.unity.modules.audio
   name: com.unity.modules.audio
   displayName: Audio
@@ -1835,8 +1790,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -1854,7 +1807,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: A:\Projects\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.cloth@1.0.0
+  resolvedPath: C:\Users\User\Documents\GitHub\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.cloth@1.0.0
   assetPath: Packages/com.unity.modules.cloth
   name: com.unity.modules.cloth
   displayName: Cloth
@@ -1890,8 +1843,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -1909,7 +1860,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: A:\Projects\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.director@1.0.0
+  resolvedPath: C:\Users\User\Documents\GitHub\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.director@1.0.0
   assetPath: Packages/com.unity.modules.director
   name: com.unity.modules.director
   displayName: Director
@@ -1949,8 +1900,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -1968,7 +1917,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: A:\Projects\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.imageconversion@1.0.0
+  resolvedPath: C:\Users\User\Documents\GitHub\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.imageconversion@1.0.0
   assetPath: Packages/com.unity.modules.imageconversion
   name: com.unity.modules.imageconversion
   displayName: Image Conversion
@@ -2001,8 +1950,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -2020,7 +1967,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: A:\Projects\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.imgui@1.0.0
+  resolvedPath: C:\Users\User\Documents\GitHub\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.imgui@1.0.0
   assetPath: Packages/com.unity.modules.imgui
   name: com.unity.modules.imgui
   displayName: IMGUI
@@ -2052,8 +1999,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -2071,7 +2016,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: A:\Projects\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.jsonserialize@1.0.0
+  resolvedPath: C:\Users\User\Documents\GitHub\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.jsonserialize@1.0.0
   assetPath: Packages/com.unity.modules.jsonserialize
   name: com.unity.modules.jsonserialize
   displayName: JSONSerialize
@@ -2103,8 +2048,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -2122,7 +2065,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: A:\Projects\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.particlesystem@1.0.0
+  resolvedPath: C:\Users\User\Documents\GitHub\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.particlesystem@1.0.0
   assetPath: Packages/com.unity.modules.particlesystem
   name: com.unity.modules.particlesystem
   displayName: Particle System
@@ -2154,8 +2097,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -2173,7 +2114,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: A:\Projects\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.physics@1.0.0
+  resolvedPath: C:\Users\User\Documents\GitHub\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.physics@1.0.0
   assetPath: Packages/com.unity.modules.physics
   name: com.unity.modules.physics
   displayName: Physics
@@ -2205,8 +2146,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -2224,7 +2163,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: A:\Projects\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.physics2d@1.0.0
+  resolvedPath: C:\Users\User\Documents\GitHub\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.physics2d@1.0.0
   assetPath: Packages/com.unity.modules.physics2d
   name: com.unity.modules.physics2d
   displayName: Physics 2D
@@ -2256,8 +2195,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -2275,7 +2212,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: A:\Projects\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.screencapture@1.0.0
+  resolvedPath: C:\Users\User\Documents\GitHub\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.screencapture@1.0.0
   assetPath: Packages/com.unity.modules.screencapture
   name: com.unity.modules.screencapture
   displayName: Screen Capture
@@ -2311,8 +2248,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -2330,7 +2265,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: A:\Projects\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.terrain@1.0.0
+  resolvedPath: C:\Users\User\Documents\GitHub\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.terrain@1.0.0
   assetPath: Packages/com.unity.modules.terrain
   name: com.unity.modules.terrain
   displayName: Terrain
@@ -2362,8 +2297,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -2381,7 +2314,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: A:\Projects\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.terrainphysics@1.0.0
+  resolvedPath: C:\Users\User\Documents\GitHub\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.terrainphysics@1.0.0
   assetPath: Packages/com.unity.modules.terrainphysics
   name: com.unity.modules.terrainphysics
   displayName: Terrain Physics
@@ -2421,8 +2354,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -2440,7 +2371,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: A:\Projects\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.tilemap@1.0.0
+  resolvedPath: C:\Users\User\Documents\GitHub\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.tilemap@1.0.0
   assetPath: Packages/com.unity.modules.tilemap
   name: com.unity.modules.tilemap
   displayName: Tilemap
@@ -2475,8 +2406,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -2494,7 +2423,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: A:\Projects\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.ui@1.0.0
+  resolvedPath: C:\Users\User\Documents\GitHub\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.ui@1.0.0
   assetPath: Packages/com.unity.modules.ui
   name: com.unity.modules.ui
   displayName: UI
@@ -2526,8 +2455,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -2545,7 +2472,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: A:\Projects\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.uielements@1.0.0
+  resolvedPath: C:\Users\User\Documents\GitHub\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.uielements@1.0.0
   assetPath: Packages/com.unity.modules.uielements
   name: com.unity.modules.uielements
   displayName: UIElements
@@ -2593,8 +2520,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -2612,7 +2537,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: A:\Projects\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.umbra@1.0.0
+  resolvedPath: C:\Users\User\Documents\GitHub\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.umbra@1.0.0
   assetPath: Packages/com.unity.modules.umbra
   name: com.unity.modules.umbra
   displayName: Umbra
@@ -2644,8 +2569,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -2663,7 +2586,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: A:\Projects\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.unityanalytics@1.0.0
+  resolvedPath: C:\Users\User\Documents\GitHub\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.unityanalytics@1.0.0
   assetPath: Packages/com.unity.modules.unityanalytics
   name: com.unity.modules.unityanalytics
   displayName: Unity Analytics
@@ -2703,8 +2626,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -2722,7 +2643,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: A:\Projects\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.unitywebrequest@1.0.0
+  resolvedPath: C:\Users\User\Documents\GitHub\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.unitywebrequest@1.0.0
   assetPath: Packages/com.unity.modules.unitywebrequest
   name: com.unity.modules.unitywebrequest
   displayName: Unity Web Request
@@ -2754,8 +2675,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -2773,7 +2692,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: A:\Projects\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.unitywebrequestassetbundle@1.0.0
+  resolvedPath: C:\Users\User\Documents\GitHub\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.unitywebrequestassetbundle@1.0.0
   assetPath: Packages/com.unity.modules.unitywebrequestassetbundle
   name: com.unity.modules.unitywebrequestassetbundle
   displayName: Unity Web Request Asset Bundle
@@ -2813,8 +2732,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -2832,7 +2749,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: A:\Projects\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.unitywebrequestaudio@1.0.0
+  resolvedPath: C:\Users\User\Documents\GitHub\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.unitywebrequestaudio@1.0.0
   assetPath: Packages/com.unity.modules.unitywebrequestaudio
   name: com.unity.modules.unitywebrequestaudio
   displayName: Unity Web Request Audio
@@ -2872,8 +2789,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -2891,7 +2806,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: A:\Projects\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.unitywebrequesttexture@1.0.0
+  resolvedPath: C:\Users\User\Documents\GitHub\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.unitywebrequesttexture@1.0.0
   assetPath: Packages/com.unity.modules.unitywebrequesttexture
   name: com.unity.modules.unitywebrequesttexture
   displayName: Unity Web Request Texture
@@ -2931,8 +2846,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -2950,7 +2863,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: A:\Projects\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.unitywebrequestwww@1.0.0
+  resolvedPath: C:\Users\User\Documents\GitHub\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.unitywebrequestwww@1.0.0
   assetPath: Packages/com.unity.modules.unitywebrequestwww
   name: com.unity.modules.unitywebrequestwww
   displayName: Unity Web Request WWW
@@ -3006,8 +2919,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -3025,7 +2936,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: A:\Projects\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.vehicles@1.0.0
+  resolvedPath: C:\Users\User\Documents\GitHub\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.vehicles@1.0.0
   assetPath: Packages/com.unity.modules.vehicles
   name: com.unity.modules.vehicles
   displayName: Vehicles
@@ -3061,8 +2972,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -3080,7 +2989,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: A:\Projects\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.video@1.0.0
+  resolvedPath: C:\Users\User\Documents\GitHub\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.video@1.0.0
   assetPath: Packages/com.unity.modules.video
   name: com.unity.modules.video
   displayName: Video
@@ -3124,8 +3033,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -3143,7 +3050,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: A:\Projects\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.vr@1.0.0
+  resolvedPath: C:\Users\User\Documents\GitHub\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.vr@1.0.0
   assetPath: Packages/com.unity.modules.vr
   name: com.unity.modules.vr
   displayName: VR
@@ -3189,8 +3096,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -3208,7 +3113,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: A:\Projects\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.wind@1.0.0
+  resolvedPath: C:\Users\User\Documents\GitHub\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.wind@1.0.0
   assetPath: Packages/com.unity.modules.wind
   name: com.unity.modules.wind
   displayName: Wind
@@ -3240,8 +3145,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -3259,7 +3162,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: A:\Projects\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.xr@1.0.0
+  resolvedPath: C:\Users\User\Documents\GitHub\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.xr@1.0.0
   assetPath: Packages/com.unity.modules.xr
   name: com.unity.modules.xr
   displayName: XR
@@ -3303,8 +3206,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -3322,7 +3223,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.0.0
   source: 2
-  resolvedPath: A:\Projects\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.subsystems@1.0.0
+  resolvedPath: C:\Users\User\Documents\GitHub\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.subsystems@1.0.0
   assetPath: Packages/com.unity.modules.subsystems
   name: com.unity.modules.subsystems
   displayName: Subsystems
@@ -3358,8 +3259,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -3377,7 +3276,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.0.0
   source: 2
-  resolvedPath: A:\Projects\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.uielementsnative@1.0.0
+  resolvedPath: C:\Users\User\Documents\GitHub\Get-Alive-or-Rich\Library\PackageCache\com.unity.modules.uielementsnative@1.0.0
   assetPath: Packages/com.unity.modules.uielementsnative
   name: com.unity.modules.uielementsnative
   displayName: UIElements Native
@@ -3420,8 +3319,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -3439,7 +3336,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.0.6
   source: 1
-  resolvedPath: A:\Projects\Get-Alive-or-Rich\Library\PackageCache\com.unity.ext.nunit@1.0.6
+  resolvedPath: C:\Users\User\Documents\GitHub\Get-Alive-or-Rich\Library\PackageCache\com.unity.ext.nunit@1.0.6
   assetPath: Packages/com.unity.ext.nunit
   name: com.unity.ext.nunit
   displayName: Custom NUnit
@@ -3479,8 +3376,6 @@ m_ResolvedPackages:
     capabilities: 7
   hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 637429759280000000
   documentationUrl: 
@@ -3498,7 +3393,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.2.1
   source: 1
-  resolvedPath: A:\Projects\Get-Alive-or-Rich\Library\PackageCache\com.unity.mathematics@1.2.1
+  resolvedPath: C:\Users\User\Documents\GitHub\Get-Alive-or-Rich\Library\PackageCache\com.unity.mathematics@1.2.1
   assetPath: Packages/com.unity.mathematics
   name: com.unity.mathematics
   displayName: Mathematics
@@ -3514,19 +3409,6 @@ m_ResolvedPackages:
   errors: []
   versions:
     all:
-    - 0.0.12-preview.2
-    - 0.0.12-preview.5
-    - 0.0.12-preview.8
-    - 0.0.12-preview.10
-    - 0.0.12-preview.11
-    - 0.0.12-preview.13
-    - 0.0.12-preview.17
-    - 0.0.12-preview.19
-    - 0.0.12-preview.20
-    - 1.0.0-preview.1
-    - 1.0.1
-    - 1.1.0-preview.1
-    - 1.1.0
     - 1.2.1
     compatible:
     - 1.2.1
@@ -3544,26 +3426,24 @@ m_ResolvedPackages:
     capabilities: 7
   hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 637324062630000000
+  datePublishedTicks: 0
   documentationUrl: 
   hasRepository: 1
   repository:
     type: git
-    url: git+https://github.com/Unity-Technologies/Unity.Mathematics.git
+    url: https://github.com/Unity-Technologies/Unity.Mathematics.git
     revision: 71412d94b7a0b0fdbb3195a5e6559bf6a761e91a
     path: 
   unityLifecycle:
     version: 
     nextVersion: 
-- packageId: com.unity.2d.common@4.0.3
+- packageId: com.unity.2d.common@5.0.0
   testable: 0
   isDirectDependency: 0
-  version: 4.0.3
+  version: 5.0.0
   source: 1
-  resolvedPath: A:\Projects\Get-Alive-or-Rich\Library\PackageCache\com.unity.2d.common@4.0.3
+  resolvedPath: C:\Users\User\Documents\GitHub\Get-Alive-or-Rich\Library\PackageCache\com.unity.2d.common@5.0.0
   assetPath: Packages/com.unity.2d.common
   name: com.unity.2d.common
   displayName: 2D Common
@@ -3579,29 +3459,10 @@ m_ResolvedPackages:
   errors: []
   versions:
     all:
-    - 1.0.9-preview.1
-    - 1.0.9-preview.2
-    - 1.0.10-preview
-    - 1.0.11-preview.1
-    - 1.1.0-preview.1
-    - 1.1.0-preview.2
-    - 1.2.0-preview.1
-    - 2.0.1
-    - 2.0.2
-    - 2.1.0
-    - 3.0.0
-    - 3.0.1
-    - 4.0.0
-    - 4.0.1
-    - 4.0.2
-    - 4.0.3
-    - 5.0.0-pre.1
-    - 5.0.0-pre.2
+    - 5.0.0
     compatible:
-    - 4.0.3
-    - 5.0.0-pre.1
-    - 5.0.0-pre.2
-    verified: 4.0.3
+    - 5.0.0
+    verified: 5.0.0
   dependencies:
   - name: com.unity.2d.sprite
     version: 1.0.0
@@ -3631,26 +3492,24 @@ m_ResolvedPackages:
     capabilities: 7
   hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 637408843940000000
+  datePublishedTicks: 0
   documentationUrl: 
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/2d.git
-    revision: c97def465b1932276762fc13f4cfee58da99d5e9
+    revision: 82ee1598c2f1270bc1081c1f908364e528335bd5
     path: 
   unityLifecycle:
     version: 
     nextVersion: 
-- packageId: com.unity.2d.path@4.0.1
+- packageId: com.unity.2d.path@5.0.0
   testable: 0
   isDirectDependency: 0
-  version: 4.0.1
+  version: 5.0.0
   source: 1
-  resolvedPath: A:\Projects\Get-Alive-or-Rich\Library\PackageCache\com.unity.2d.path@4.0.1
+  resolvedPath: C:\Users\User\Documents\GitHub\Get-Alive-or-Rich\Library\PackageCache\com.unity.2d.path@5.0.0
   assetPath: Packages/com.unity.2d.path
   name: com.unity.2d.path
   displayName: 2D Path
@@ -3666,27 +3525,10 @@ m_ResolvedPackages:
   errors: []
   versions:
     all:
-    - 1.0.0-preview.1
-    - 1.0.0-preview.4
-    - 2.0.1
-    - 2.0.2
-    - 2.0.3
-    - 2.0.4
-    - 2.0.5
-    - 2.0.6
-    - 2.1.0
-    - 3.0.0
-    - 3.0.1
-    - 3.0.2
-    - 4.0.0
-    - 4.0.1
-    - 5.0.0-pre.1
-    - 5.0.0-pre.2
+    - 5.0.0
     compatible:
-    - 4.0.1
-    - 5.0.0-pre.1
-    - 5.0.0-pre.2
-    verified: 4.0.1
+    - 5.0.0
+    verified: 5.0.0
   dependencies: []
   resolvedDependencies: []
   keywords:
@@ -3701,16 +3543,14 @@ m_ResolvedPackages:
     capabilities: 7
   hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 637328350450000000
+  datePublishedTicks: 0
   documentationUrl: 
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/2d.git
-    revision: 7d7470f4ca0ea8353d4c9640b3b6ae9d1ebd9c1d
+    revision: 82ee1598c2f1270bc1081c1f908364e528335bd5
     path: 
   unityLifecycle:
     version: 

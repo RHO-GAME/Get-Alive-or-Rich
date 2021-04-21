@@ -17,9 +17,6 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
     - UnityEditor.Tilemaps.TilemapPrefabStageHelper
-    Unity.Mobile.AndroidLogcat.Editor.dll:
-    - Unity.Android.Logcat.AndroidLogcatConsoleWindow
-    - Unity.Android.Logcat.AndroidLogcatManager
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     UnityEditor.Graphs.dll:
@@ -51,7 +48,7 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 3696}
+      Script: {instanceID: 12264}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -77,7 +74,7 @@ ScriptsOnlyBuild:
     className: Image
   - hash:
       serializedVersion: 2
-      Hash: 71b711096c6c32621c1d4c02310898b7
+      Hash: 61f2059db36c32396c3d12077855592b
     assemblyName: Unity.2D.Animation.Runtime.dll
     namespaceName: UnityEngine.U2D.Animation
     className: SpriteSkin
@@ -183,6 +180,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.IK.Runtime.dll
     namespaceName: UnityEngine.U2D.IK
     className: IKManager2D
+  - hash:
+      serializedVersion: 2
+      Hash: 06fa49a6e484b4c3e67d41ed9b03d996
+    assemblyName: Unity.2D.Animation.Runtime.dll
+    namespaceName: UnityEngine.U2D.Animation
+    className: SkeletonAsset
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -297,6 +300,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: ToggleGroup
+  - hash:
+      serializedVersion: 2
+      Hash: ca3c715b2b37e6685a9585341fed70f3
+    assemblyName: Unity.2D.Animation.Runtime.dll
+    namespaceName: UnityEngine.U2D.Animation
+    className: Bone
   - hash:
       serializedVersion: 2
       Hash: 69415240821be7986b27e72bf9609a30
@@ -803,9 +812,9 @@ ScriptsOnlyBuild:
     className: UnityOnSubmitMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 87cef3c82381dc586f6772c3e27561b6
+      Hash: a089d4bb50371ef30e28dcaf580da14b
     assemblyName: Unity.2D.Animation.Runtime.dll
-    namespaceName: UnityEngine.Experimental.U2D.Animation
+    namespaceName: UnityEngine.U2D.Animation
     className: SpriteLibrary
   - hash:
       serializedVersion: 2
@@ -833,9 +842,9 @@ ScriptsOnlyBuild:
     className: UnityOnMoveMessageListener
   - hash:
       serializedVersion: 2
-      Hash: b424b4eeb810aecb0ff91c62639241e9
+      Hash: 3ee38dae950a2169533c65ccdabe70cc
     assemblyName: Unity.2D.Animation.Runtime.dll
-    namespaceName: UnityEngine.Experimental.U2D.Animation
+    namespaceName: UnityEngine.U2D.Animation
     className: SpriteResolver
   - hash:
       serializedVersion: 2
@@ -869,9 +878,9 @@ ScriptsOnlyBuild:
     className: UnityOnParticleCollisionMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 28cfb4bd305dd11c6326cc3ee7c14138
+      Hash: 90efdcafb83064d9339e8c65882c3255
     assemblyName: Unity.2D.Animation.Runtime.dll
-    namespaceName: UnityEngine.Experimental.U2D.Animation
+    namespaceName: UnityEngine.U2D.Animation
     className: SpriteLibraryAsset
   - hash:
       serializedVersion: 2
@@ -911,6 +920,12 @@ ScriptsOnlyBuild:
     className: TMP_ScrollbarEventHandler
   - hash:
       serializedVersion: 2
+      Hash: 34e321a950b6274ff1f5f70e9a1b4c9a
+    assemblyName: Unity.2D.Animation.Runtime.dll
+    namespaceName: UnityEngine.U2D.Animation
+    className: SpriteLibrarySourceAsset
+  - hash:
+      serializedVersion: 2
       Hash: 8220b46879dc5e37db1b940c938f5744
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -948,4 +963,4 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Jewels/Scenes/Jewel.unity
-  playerPath: C:/Users/Roman/Desktop/gaor.apk
+  playerPath: C:/Users/User/Desktop/tmp.apk
