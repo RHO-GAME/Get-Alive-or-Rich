@@ -56,9 +56,9 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Main\Scripts\ButtonController.cs" />
     <Compile Include="Assets\Jewels\Sсripts\JewelsControl.cs" />
     <Compile Include="Assets\Main\Scripts\StartLevel.cs" />
-    <Compile Include="Assets\Main\Scripts\ButtonController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
