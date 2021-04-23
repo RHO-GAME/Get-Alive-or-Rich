@@ -1,5 +1,5 @@
 using System;
-using System.Linq;
+using System.Collections.Generic;
 using UnityEditor.EditorTools;
 using UnityEditor.ShortcutManagement;
 using UnityEngine;
@@ -12,8 +12,13 @@ namespace UnityEditor.Tilemaps
     /// </summary>
     public abstract class TilemapEditorTool : EditorTool
     {
-        private static EditorTool[] s_TilemapEditorTools = null;
-        private static float s_TilemapEditorToolsToolbarSize = 0.0f;
+        public class ShortcutContext : IShortcutToolContext
+        {
+            public bool active { get; set; }
+        }
+
+        private static Dictionary<Type, EditorTool> s_TilemapEditorToolsMap;
+        private static EditorTool[] s_DefaultTilemapEditorTools;
 
         /// <summary>
         /// All currently active Editor Tools which work with the Tile Palette
@@ -24,7 +29,7 @@ namespace UnityEditor.Tilemaps
             {
                 if (IsCachedEditorToolsInvalid())
                     InstantiateEditorTools();
-                return s_TilemapEditorTools;
+                return GridPaintingState.activeBrushTools;
             }
         }
 
@@ -37,7 +42,7 @@ namespace UnityEditor.Tilemaps
             {
                 if (IsCachedEditorToolsInvalid())
                     InstantiateEditorTools();
-                return s_TilemapEditorToolsToolbarSize;
+                return GridPaintingState.activeBrushToolbarSize;
             }
         }
 
@@ -80,6 +85,11 @@ namespace UnityEditor.Tilemaps
             toolbarIcon.tooltip = GetTooltipText(tooltipStringFormat, shortcutId);
         }
 
+        public virtual bool HandleTool(bool isHotControl, GridLayout gridLayout, GameObject brushTarget, Vector3Int gridMousePosition)
+        {
+            return false;
+        }
+
         /// <summary>
         /// Gets whether the tool is available for use
         /// </summary>
@@ -91,10 +101,10 @@ namespace UnityEditor.Tilemaps
 
         internal static void UpdateTooltips()
         {
-            if (s_TilemapEditorTools == null)
+            if (IsCachedEditorToolsInvalid())
                 InstantiateEditorTools();
 
-            foreach (var editorTool in s_TilemapEditorTools)
+            foreach (var editorTool in GridPaintingState.activeBrushTools)
             {
                 var tilemapEditorTool = editorTool as TilemapEditorTool;
                 if (tilemapEditorTool == null)
@@ -165,23 +175,65 @@ namespace UnityEditor.Tilemaps
 
         private static bool IsCachedEditorToolsInvalid()
         {
-            return s_TilemapEditorTools == null || s_TilemapEditorTools.Length == 0 || s_TilemapEditorTools[0] == null;
+            return s_TilemapEditorToolsMap == null
+                || s_DefaultTilemapEditorTools == null
+                || s_DefaultTilemapEditorTools.Length == 0
+                || s_DefaultTilemapEditorTools[0] == null;
         }
 
         private static void InstantiateEditorTools()
         {
-            s_TilemapEditorTools = new EditorTool[]
+            s_DefaultTilemapEditorTools = TilemapEditorToolPreferences.CreateDefaultTilePaletteEditorTools();
+            s_TilemapEditorToolsMap = new Dictionary<Type, EditorTool>(s_DefaultTilemapEditorTools.Length);
+            foreach (var editorTool in s_DefaultTilemapEditorTools)
             {
-                CreateInstance<SelectTool>(),
-                CreateInstance<MoveTool>(),
-                CreateInstance<PaintTool>(),
-                CreateInstance<BoxTool>(),
-                CreateInstance<PickingTool>(),
-                CreateInstance<EraseTool>(),
-                CreateInstance<FillTool>()
-            };
-            GUIStyle toolbarStyle = "Command";
-            s_TilemapEditorToolsToolbarSize = s_TilemapEditorTools.Sum(x => toolbarStyle.CalcSize(x.toolbarIcon).x);
+                s_TilemapEditorToolsMap.Add(editorTool.GetType(), editorTool);
+            }
+            GridPaintingState.UpdateBrushToolbar();
+        }
+
+        internal static void UpdateEditorTools(BrushToolsAttribute brushToolsAttribute)
+        {
+            if (IsCachedEditorToolsInvalid())
+                InstantiateEditorTools();
+            EditorTool[] editorTools;
+            if (brushToolsAttribute?.toolList == null || brushToolsAttribute.toolList.Count == 0)
+            {
+                editorTools = s_DefaultTilemapEditorTools;
+            }
+            else
+            {
+                editorTools = new EditorTool[brushToolsAttribute.toolList.Count];
+                for (int i = 0; i < brushToolsAttribute.toolList.Count; ++i)
+                {
+                    var toolType = brushToolsAttribute.toolList[i];
+                    if (!s_TilemapEditorToolsMap.TryGetValue(toolType, out EditorTool editorTool))
+                    {
+                        editorTool = (EditorTool)ScriptableObject.CreateInstance(toolType);
+                        s_TilemapEditorToolsMap.Add(toolType, editorTool);
+                    }
+                    editorTools[i] = editorTool;
+                }
+            }
+            GridPaintingState.SetBrushTools(editorTools);
+        }
+
+        internal static bool IsCustomTilemapEditorToolActive()
+        {
+            if (EditorToolManager.activeTool == null
+                || !(EditorToolManager.activeTool is TilemapEditorTool))
+                return false;
+
+            if (s_DefaultTilemapEditorTools == null)
+                return false;
+
+            foreach (var tool in s_DefaultTilemapEditorTools)
+            {
+                if (tool == EditorToolManager.activeTool)
+                    return false;
+            }
+
+            return true;
         }
     }
 }

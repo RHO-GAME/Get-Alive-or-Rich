@@ -21,8 +21,7 @@ public class StartLevel : MonoBehaviour
     }
     public void CreateCanvas()
     {
-        Canvas canv = Instantiate(canvas);
-        canv.GetComponentInChildren<Animator>().Play("layer.ButtonAppearance", 0, 0f);
+        Instantiate(canvas);
     }
     // Update is called once per frame
     void Update()

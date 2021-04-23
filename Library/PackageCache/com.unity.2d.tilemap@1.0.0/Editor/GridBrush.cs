@@ -191,7 +191,7 @@ namespace UnityEditor.Tilemaps
             if (map == null)
                 return;
 
-            var emptyTiles = new TileBase[position.size.x * position.size.y * position.size.z];
+            var emptyTiles = new TileBase[Math.Abs(position.size.x * position.size.y * position.size.z)];
             map.SetTilesBlock(position, emptyTiles);
             foreach (Vector3Int location in position.allPositionsWithin)
             {
