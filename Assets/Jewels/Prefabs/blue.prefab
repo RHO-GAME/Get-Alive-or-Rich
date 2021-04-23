@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6904042352895739338}
   - component: {fileID: 2021724028095848199}
-  - component: {fileID: 2662059936387278588}
+  - component: {fileID: 2761801161236092158}
   m_Layer: 0
   m_Name: blue
   m_TagString: Untagged
@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 921217887464483679}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.52, y: -16.41, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.11111111, y: 0.11111111, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -84,7 +84,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &2662059936387278588
+--- !u!95 &2761801161236092158
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -94,7 +94,7 @@ Animator:
   m_GameObject: {fileID: 921217887464483679}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b1d8f7e8d2c1340449df10c3883dd041, type: 2}
+  m_Controller: {fileID: 9100000, guid: 791f818cb6f81394eb50c4f0f178ce35, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

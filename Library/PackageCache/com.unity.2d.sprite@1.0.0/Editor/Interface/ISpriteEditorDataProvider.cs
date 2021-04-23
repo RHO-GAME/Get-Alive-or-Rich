@@ -54,12 +54,6 @@ namespace UnityEditor.U2D.Sprites
         void SetBones(GUID guid, List<SpriteBone> bones);
     }
 
-    /// <summary>
-    /// Data provider that provides data for ID to be used given a SpriteRect's name.
-    /// </summary>
-    /// <remarks>
-    /// The name and ID pair is used to allow mapping back a previous created SpriteRect.
-    /// </remarks>
     public interface ISpriteNameFileIdDataProvider
     {
         /// <summary>Returns an IEnumerable of SpriteNameFileIdPair representing the name and file id pairs the provider has.</summary>
