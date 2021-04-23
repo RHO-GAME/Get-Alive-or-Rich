@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.U2D;
 using System.Collections.Generic;
-
+using UnityEditor.Experimental.SceneManagement;
 using UnityEditor.U2D.SpriteShape;
 using Object = UnityEngine.Object;
 
@@ -125,7 +125,7 @@ namespace UnityEditor.U2D
                                     PositionSceneDragObjects(s_SceneDragObjects, sceneView, evt.mousePosition);
                             }
 
-                            var prefabStage = UnityEditor.SceneManagement.PrefabStageUtility.GetCurrentPrefabStage();
+                            var prefabStage = PrefabStageUtility.GetCurrentPrefabStage();
 
                             foreach (GameObject dragGO in s_SceneDragObjects)
                             {

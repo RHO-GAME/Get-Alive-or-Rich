@@ -894,6 +894,17 @@ namespace UnityEditor.Tilemaps
             }
         }
 
+        protected override bool CustomTool(bool isHotControl, TilemapEditorTool tool, Vector3Int position)
+        {
+            var executed = false;
+            if (grid)
+            {
+                executed = tool.HandleTool(isHotControl, grid, brushTarget, position);
+                OnPaletteChanged();
+            }
+            return executed;
+        }
+
         public override void Repaint()
         {
             m_Owner.Repaint();
