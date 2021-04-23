@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace UnityEditor.Tilemaps
@@ -11,12 +10,6 @@ namespace UnityEditor.Tilemaps
         static class Styles
         {
             public static readonly GUIContent gridSelectionLabel = EditorGUIUtility.TrTextContent("Grid Selection");
-        }
-
-        private void OnValidate()
-        {
-            var position = GridSelection.position;
-            GridSelection.position = new BoundsInt(position.min, position.max - position.min);
         }
 
         private void OnEnable()
@@ -49,12 +42,7 @@ namespace UnityEditor.Tilemaps
             GUILayout.Label(icon, GUILayout.Width(iconSize), GUILayout.Height(iconSize));
             EditorGUILayout.BeginVertical();
             GUILayout.Label(Styles.gridSelectionLabel);
-            EditorGUI.BeginChangeCheck();
             GridSelection.position = EditorGUILayout.BoundsIntField(GUIContent.none, GridSelection.position);
-            if (EditorGUI.EndChangeCheck())
-            {
-                OnValidate();
-            }
             EditorGUILayout.EndVertical();
             EditorGUILayout.EndHorizontal();
             DrawHeaderHelpAndSettingsGUI(GUILayoutUtility.GetLastRect());

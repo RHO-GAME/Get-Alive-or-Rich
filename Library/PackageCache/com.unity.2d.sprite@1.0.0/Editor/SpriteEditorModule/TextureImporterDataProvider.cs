@@ -135,53 +135,44 @@ namespace UnityEditor.U2D.Sprites
             }
             else if (spriteImportMode == SpriteImportMode.Multiple)
             {
-                Dictionary<GUID, SpriteRect> newSprites = new Dictionary<GUID, SpriteRect>();
+                var newSpritesById = new Dictionary<GUID, SpriteRect>();
+                var newSpritesByName = new Dictionary<string, SpriteRect>();
                 foreach (var newSprite in spriteRects)
                 {
-                    newSprites.Add(newSprite.spriteID, newSprite);
+                    newSpritesById.Add(newSprite.spriteID, newSprite);
+                    newSpritesByName.Add(newSprite.name, newSprite);
                 }
-                HashSet<long> internalIdUsed = new HashSet<long>();
-                for (int i = m_SpritesMultiple.Count - 1; i >= 0; --i)
+
+                for (var i = m_SpritesMultiple.Count - 1; i >= 0; --i)
                 {
                     var spriteID = m_SpritesMultiple[i].spriteID;
-                    if (newSprites.TryGetValue(spriteID, out SpriteRect smd))
+                    var spriteName = m_SpritesMultiple[i].name;
+                    SpriteRect spriteRect = null;
+                    if (newSpritesById.TryGetValue(spriteID, out spriteRect))
                     {
-                        m_SpritesMultiple[i].CopyFromSpriteRect(smd);
-                        internalIdUsed.Add(m_SpritesMultiple[i].internalID);
-                        newSprites.Remove(spriteID);
+                        m_SpritesMultiple[i].CopyFromSpriteRect(spriteRect);
+                        newSpritesById.Remove(spriteRect.spriteID);
+                        newSpritesByName.Remove(spriteRect.name);
+                    }
+                    else if (newSpritesByName.TryGetValue(spriteName, out spriteRect))
+                    {
+                        var oldSpriteId = m_SpritesMultiple[i].spriteID;
+                        var oldInternalId = m_SpritesMultiple[i].internalID;
+                        m_SpritesMultiple[i].CopyFromSpriteRect(spriteRect);
+
+                        // Keeping old IDs to maintain the links to serialized Sprites
+                        m_SpritesMultiple[i].spriteID = oldSpriteId;
+                        m_SpritesMultiple[i].internalID = oldInternalId;
+
+                        newSpritesByName.Remove(spriteRect.name);
+                        newSpritesById.Remove(spriteRect.spriteID);
                     }
                     else
-                    {
                         m_SpritesMultiple.RemoveAt(i);
-                    }
                 }
-                // Add new ones
-                var nameIdTable = GetSerializedNameFileIdTable(GetSerializedObject());
-                // First pass map by id
-                var values = newSprites.Values.ToArray();
-                foreach (var newSprite in values)
-                {
-                    var newSpriteRect = new SpriteDataExt(newSprite);
-                    var nameIdPair = nameIdTable.FirstOrDefault(x => x.GetFileGUID() == newSprite.spriteID);
-                    if (nameIdPair != null && !internalIdUsed.Contains(nameIdPair.internalID))
-                    {
-                        newSpriteRect.internalID = nameIdPair.internalID;
-                        internalIdUsed.Add(nameIdPair.internalID);
-                        m_SpritesMultiple.Add(newSpriteRect);
-                        newSprites.Remove(newSprite.spriteID);
-                    }
-                }
-                //Second pass map by name
-                foreach (var newSprite in newSprites.Values)
-                {
-                    var newSpriteRect = new SpriteDataExt(newSprite);
-                    var nameIdPair = nameIdTable.FirstOrDefault(x => x.name == newSprite.name);
-                    if (nameIdPair != null && !internalIdUsed.Contains(nameIdPair.internalID))
-                        newSpriteRect.internalID = nameIdPair.internalID;
 
-                    internalIdUsed.Add(newSpriteRect.internalID);
-                    m_SpritesMultiple.Add(newSpriteRect);
-                }
+                foreach (var newSprite in newSpritesById.Values)
+                    m_SpritesMultiple.Add(new SpriteDataExt(newSprite));
             }
         }
 
@@ -192,28 +183,13 @@ namespace UnityEditor.U2D.Sprites
 
         void ISpriteNameFileIdDataProvider.SetNameFileIdPairs(IEnumerable<SpriteNameFileIdPair> pairs)
         {
-            var newFileIdPair = new SpriteNameFileIdPairExt[pairs.Count()];
+            m_NameFileIdPairs = new SpriteNameFileIdPairExt[pairs.Count()];
             var count = 0;
             foreach (var pair in pairs)
             {
-                var guid = pair.GetFileGUID();
-                long internalId = guid.GetHashCode();
-                //check if guid is in current name id table
-                var idPair = m_NameFileIdPairs.FirstOrDefault(x => x.GetFileGUID() == guid);
-                if (idPair != null)
-                    internalId = idPair.internalID;
-                else
-                {
-                    // check if guid is in current sprite list
-                    var sr = m_SpritesMultiple.FirstOrDefault(x => x.spriteID == guid);
-                    if (sr != null)
-                        internalId = sr.internalID;
-                }
-                newFileIdPair[count] = new SpriteNameFileIdPairExt(pair.name, guid, internalId);
+                m_NameFileIdPairs[count] = new SpriteNameFileIdPairExt(pair.name, pair.fileId);
                 count++;
             }
-
-            m_NameFileIdPairs = newFileIdPair;
         }
 
         internal SpriteRect GetSpriteData(GUID guid)
@@ -284,10 +260,10 @@ namespace UnityEditor.U2D.Sprites
             }
 
             var noOfPairs = m_NameFileIdPairs.Length;
-            var pairsSo = so.FindProperty("m_SpriteSheet.m_NameFileIdTable");
-            pairsSo.arraySize = noOfPairs;
             if (noOfPairs > 0)
             {
+                var pairsSo = so.FindProperty("m_SpriteSheet.m_NameFileIdTable");
+                pairsSo.arraySize = noOfPairs;
                 var element = pairsSo.GetArrayElementAtIndex(0);
                 foreach (var pair in m_NameFileIdPairs)
                 {
@@ -320,31 +296,18 @@ namespace UnityEditor.U2D.Sprites
             }
             m_SecondaryTextureDataTransfer = SpriteSecondaryTextureDataTransfer.Load(so);
 
-            m_NameFileIdPairs = GetSerializedNameFileIdTable(so);
-        }
-
-        SpriteNameFileIdPairExt[] GetSerializedNameFileIdTable(SerializedObject so)
-        {
             var nameFileIdTableSo = so.FindProperty("m_SpriteSheet.m_NameFileIdTable");
             var arraySize = nameFileIdTableSo.arraySize;
-            var nameFileIdPairs = new SpriteNameFileIdPairExt[arraySize];
-            if (nameFileIdPairs.Length > 0)
+            m_NameFileIdPairs = new SpriteNameFileIdPairExt[arraySize];
+            if (m_NameFileIdPairs.Length > 0)
             {
                 var sp = nameFileIdTableSo.GetArrayElementAtIndex(0);
                 for (var i = 0; i < nameFileIdTableSo.arraySize; ++i)
                 {
-                    var spriteNameFileId = SpriteNameFileIdPairExt.GetValue(sp);
-                    // check if this internal nid is already in one of the sprite.
-                    // We don't check name as changing internal id can cause reference to be lost
-                    var spriteRect = m_SpritesMultiple.FirstOrDefault(x => x.internalID == spriteNameFileId.internalID);
-                    if (spriteRect != null)
-                        spriteNameFileId.SetFileGUID(spriteRect.spriteID);
-                    nameFileIdPairs[i] = spriteNameFileId;
+                    m_NameFileIdPairs[i] = new SpriteNameFileIdPairExt(sp);
                     sp.Next(false);
                 }
             }
-
-            return nameFileIdPairs;
         }
 
         T ISpriteEditorDataProvider.GetDataProvider<T>()
