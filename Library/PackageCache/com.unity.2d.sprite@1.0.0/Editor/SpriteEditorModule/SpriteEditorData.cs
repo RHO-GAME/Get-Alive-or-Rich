@@ -18,8 +18,6 @@ namespace UnityEditor.U2D.Sprites
         public List<Vector2[]> spritePhysicsOutline;
         public List<SpriteBone> spriteBone;
 
-        long m_InternalID;
-
         internal SpriteDataExt(SerializedObject so)
         {
             var ti = so.targetObject as TextureImporter;
@@ -36,7 +34,7 @@ namespace UnityEditor.U2D.Sprites
             var guidSP = so.FindProperty("m_SpriteSheet.m_SpriteID");
             spriteID = new GUID(guidSP.stringValue);
 
-            m_InternalID = so.FindProperty("m_SpriteSheet.m_InternalID").longValue;
+            internalID = so.FindProperty("m_SpriteSheet.m_InternalID").longValue;
         }
 
         internal SpriteDataExt(SerializedProperty sp)
@@ -48,26 +46,7 @@ namespace UnityEditor.U2D.Sprites
             pivot = SpriteEditorUtility.GetPivotValue(alignment, sp.FindPropertyRelative("m_Pivot").vector2Value);
             tessellationDetail = sp.FindPropertyRelative("m_TessellationDetail").floatValue;
             spriteID = new GUID(sp.FindPropertyRelative("m_SpriteID").stringValue);
-            m_InternalID = sp.FindPropertyRelative("m_InternalID").longValue;
-        }
-
-        internal SpriteDataExt(SpriteDataExt sr)
-        {
-            originalName = sr.originalName;
-            name = sr.name;
-            border = sr.border;
-            tessellationDetail = 0;
-            rect = sr.rect;
-            spriteID = sr.spriteID;
-            m_InternalID = sr.internalID;
-            alignment = sr.alignment;
-            pivot = sr.pivot;
-            spriteOutline = new List<Vector2[]>();
-            vertices = new List<Vertex2DMetaData>();
-            indices = new List<int>();
-            edges = new List<Vector2Int>();
-            spritePhysicsOutline = new List<Vector2[]>();
-            spriteBone = new List<SpriteBone>();
+            internalID = sp.FindPropertyRelative("m_InternalID").longValue;
         }
 
         internal SpriteDataExt(SpriteRect sr)
@@ -78,7 +57,7 @@ namespace UnityEditor.U2D.Sprites
             tessellationDetail = 0;
             rect = sr.rect;
             spriteID = sr.spriteID;
-            m_InternalID = sr.spriteID.GetHashCode();
+            internalID = sr.internalID;
             alignment = sr.alignment;
             pivot = sr.pivot;
             spriteOutline = new List<Vector2[]>();
@@ -96,7 +75,7 @@ namespace UnityEditor.U2D.Sprites
             so.FindProperty("m_SpritePivot").vector2Value = pivot;
             so.FindProperty("m_SpriteTessellationDetail").floatValue = tessellationDetail;
             so.FindProperty("m_SpriteSheet.m_SpriteID").stringValue = spriteID.ToString();
-            so.FindProperty("m_SpriteSheet.m_InternalID").longValue = m_InternalID;
+            so.FindProperty("m_SpriteSheet.m_InternalID").longValue = internalID;
 
             var sp = so.FindProperty("m_SpriteSheet");
             if (spriteBone != null)
@@ -118,7 +97,7 @@ namespace UnityEditor.U2D.Sprites
             sp.FindPropertyRelative("m_Pivot").vector2Value = pivot;
             sp.FindPropertyRelative("m_TessellationDetail").floatValue = tessellationDetail;
             sp.FindPropertyRelative("m_SpriteID").stringValue = spriteID.ToString();
-            sp.FindPropertyRelative("m_InternalID").longValue = m_InternalID;
+            sp.FindPropertyRelative("m_InternalID").longValue = internalID;
 
             if (spriteBone != null)
                 SpriteBoneDataTransfer.Apply(sp, spriteBone);
@@ -138,51 +117,34 @@ namespace UnityEditor.U2D.Sprites
             pivot = spriteRect.pivot;
             rect = spriteRect.rect;
             spriteID = spriteRect.spriteID;
-        }
-
-        public long internalID
-        {
-            get
-            {
-                if (m_InternalID == 0)
-                    m_InternalID = spriteID.GetHashCode();
-
-                return m_InternalID;
-            }
-            set => m_InternalID = value;
+            internalID = spriteRect.internalID;
         }
     }
 
     internal class SpriteNameFileIdPairExt : SpriteNameFileIdPair
     {
         private const string k_NameField = "first";
-        private const string k_FileIdField = "second";
+        private const string k_fileIdField = "second";
 
-        long m_InternalId;
+        internal SpriteNameFileIdPairExt(string name, long fileId) : base(name, fileId)
+        {}
 
-        public SpriteNameFileIdPairExt(string name, GUID guid, long internalId)
-            : base(name, guid)
+        internal SpriteNameFileIdPairExt(SerializedProperty sp)
         {
-            m_InternalId = internalId;
+            name = sp.FindPropertyRelative(k_NameField).stringValue;
+            fileId = sp.FindPropertyRelative(k_fileIdField).longValue;
         }
 
-        public long internalID
+        internal SpriteNameFileIdPairExt(SpriteNameFileIdPair pair)
         {
-            get => m_InternalId;
-            set => m_InternalId = value;
-        }
-
-        static public SpriteNameFileIdPairExt GetValue(SerializedProperty sp)
-        {
-            var name = sp.FindPropertyRelative(k_NameField).stringValue;
-            var id = sp.FindPropertyRelative(k_FileIdField).longValue;
-            return new SpriteNameFileIdPairExt(name, GUID.CreateGUIDFromSInt64(id), id);
+            name = pair.name;
+            fileId = pair.fileId;
         }
 
         public void Apply(SerializedProperty sp)
         {
             sp.FindPropertyRelative(k_NameField).stringValue = name;
-            sp.FindPropertyRelative(k_FileIdField).longValue = internalID;
+            sp.FindPropertyRelative(k_fileIdField).longValue = fileId;
         }
     }
 }
