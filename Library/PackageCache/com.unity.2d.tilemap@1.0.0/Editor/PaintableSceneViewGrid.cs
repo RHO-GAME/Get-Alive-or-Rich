@@ -230,6 +230,16 @@ namespace UnityEditor.Tilemaps
                 gridBrush.MoveEnd(grid, brushTarget, position);
         }
 
+        protected override bool CustomTool(bool isHotControl, TilemapEditorTool tool, Vector3Int position)
+        {
+            var executed = false;
+            if (grid != null)
+            {
+                executed = tool.HandleTool(isHotControl, grid, brushTarget, position);
+            }
+            return executed;
+        }
+
         protected override void OnEditStart()
         {
             if (GridPaintingState.activeBrushEditor != null && grid != null)
