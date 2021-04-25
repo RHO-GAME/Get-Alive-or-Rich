@@ -255,7 +255,10 @@ namespace UnityEditor.U2D.Sprites
 
         private int AddSprite(Rect rect, int alignment, Vector2 pivot, string name, Vector4 border)
         {
+            var internalID = SpriteRect.GenerateInternalID();
             if (m_RectsCache.IsNameUsed(name))
+                return -1;
+            if (m_RectsCache.IsInternalIdInTable(internalID))
                 return -1;
 
             SpriteRect spriteRect = new SpriteRect();
@@ -266,9 +269,11 @@ namespace UnityEditor.U2D.Sprites
             spriteRect.originalName = spriteRect.name;
             spriteRect.border = border;
 
-            spriteRect.spriteID = GUID.Generate();
+            spriteRect.internalID = internalID;
+            spriteRect.spriteID = GUID.CreateGUIDFromSInt64(internalID);
 
-            m_RectsCache.Add(spriteRect);
+            var shouldReplace = m_RectsCache.IsNameInTable(name);
+            m_RectsCache.Add(spriteRect, shouldReplace);
             spriteEditor.SetDataModified();
 
             return m_RectsCache.spriteRects.Count - 1;
@@ -295,8 +300,6 @@ namespace UnityEditor.U2D.Sprites
             foreach (Rect frame in frames)
                 AddSprite(frame, alignment, pivot, slicingMethod, originalCount, ref index);
 
-            if (slicingMethod == AutoSlicingMethod.DeleteAll)
-                m_RectsCache.ClearUnusedFileID();
             selected = null;
             spriteEditor.SetDataModified();
             Repaint();
@@ -333,8 +336,6 @@ namespace UnityEditor.U2D.Sprites
             foreach (Rect frame in frames)
                 AddSprite(frame, alignment, pivot, slicingMethod, originalCount, ref index);
 
-            if (slicingMethod == AutoSlicingMethod.DeleteAll)
-                m_RectsCache.ClearUnusedFileID();
             selected = null;
             spriteEditor.SetDataModified();
             Repaint();
@@ -427,8 +428,7 @@ namespace UnityEditor.U2D.Sprites
                 outlineRect.outlines = outlines;
                 spriteRects[spriteIndex] = outlineRect;
             }
-            if (slicingMethod == AutoSlicingMethod.DeleteAll)
-                m_RectsCache.ClearUnusedFileID();
+
             selected = null;
             spriteEditor.SetDataModified();
             Repaint();

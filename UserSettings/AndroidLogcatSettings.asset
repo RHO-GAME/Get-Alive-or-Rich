@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "3300e59f590ac2af",
         "name": "com.DefaultCompany.com.unity.template.mobile2D",
-        "processId": 30540,
+        "processId": 20413,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -132,6 +132,42 @@
             "deviceId": "3300e59f590ac2af",
             "name": "com.DefaultCompany.com.unity.template.mobile2D",
             "processId": 30540,
+            "exited": false
+        },
+        {
+            "deviceId": "3300e59f590ac2af",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 32057,
+            "exited": false
+        },
+        {
+            "deviceId": "3300e59f590ac2af",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 865,
+            "exited": false
+        },
+        {
+            "deviceId": "3300e59f590ac2af",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 2626,
+            "exited": false
+        },
+        {
+            "deviceId": "3300e59f590ac2af",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 4579,
+            "exited": false
+        },
+        {
+            "deviceId": "3300e59f590ac2af",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 7771,
+            "exited": false
+        },
+        {
+            "deviceId": "3300e59f590ac2af",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 20413,
             "exited": false
         }
     ],

@@ -1,8 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
-using UnityEditor.EditorTools;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
@@ -19,7 +17,6 @@ namespace UnityEditor.Tilemaps
     {
         [SerializeField] private GameObject m_EditModeScenePaintTarget; // Which GameObject in scene was the last painting target in EditMode
         [SerializeField] private GameObject m_ScenePaintTarget; // Which GameObject in scene is considered as painting target
-        [SerializeField] private EditorTool[] m_BrushTools;
         [SerializeField] private GridBrushBase m_Brush; // Which brush will handle painting callbacks
         [SerializeField] private PaintableGrid m_ActiveGrid; // Grid that has painting focus (can be palette, too)
         [SerializeField] private PaintableGrid m_LastActiveGrid; // Grid that last had painting focus (can be palette, too)
@@ -29,7 +26,6 @@ namespace UnityEditor.Tilemaps
         private bool m_FlushPaintTargetCache;
         private Editor m_CachedEditor;
         private bool m_SavingPalette;
-        private float m_BrushToolbarSize;
 
         /// <summary>
         /// Callback when the Tile Palette's active target has changed
@@ -162,10 +158,8 @@ namespace UnityEditor.Tilemaps
             get
             {
                 if (instance.m_Brush == null)
-                {
                     instance.m_Brush = GridPaletteBrushes.instance.GetLastUsedBrush();
-                    UpdateBrushToolbar();
-                }
+
                 return instance.m_Brush;
             }
             set
@@ -176,10 +170,7 @@ namespace UnityEditor.Tilemaps
                     instance.m_FlushPaintTargetCache = true;
 
                     if (value != null)
-                    {
                         GridPaletteBrushes.instance.StoreLastUsedBrush(value);
-                        UpdateBrushToolbar();
-                    }
 
                     // Ensure that current scenePaintTarget is still a valid target after a brush change
                     if (scenePaintTarget != null && !ValidatePaintTarget(scenePaintTarget))
@@ -298,35 +289,6 @@ namespace UnityEditor.Tilemaps
             get { return instance.m_LastActiveGrid; }
         }
 
-        internal static EditorTool[] activeBrushTools
-        {
-            get { return instance.m_BrushTools; }
-            set { instance.m_BrushTools = value; }
-        }
-
-        internal static float activeBrushToolbarSize
-        {
-            get
-            {
-                if (instance.m_BrushToolbarSize == 0.0f)
-                    CalculateToolbarSize();
-                return instance.m_BrushToolbarSize;
-            }
-            set { instance.m_BrushToolbarSize = value;  }
-        }
-
-        private static void CalculateToolbarSize()
-        {
-            GUIStyle toolbarStyle = "Command";
-            activeBrushToolbarSize = activeBrushTools.Sum(x => toolbarStyle.CalcSize(x.toolbarIcon).x);
-        }
-
-        internal static void SetBrushTools(EditorTool[] editorTools)
-        {
-            activeBrushTools = editorTools;
-            activeBrushToolbarSize = 0.0f;
-        }
-
         private static bool ValidatePaintTarget(GameObject candidate)
         {
             if (candidate == null || candidate.GetComponentInParent<Grid>() == null && candidate.GetComponent<Grid>() == null)
@@ -369,14 +331,6 @@ namespace UnityEditor.Tilemaps
         {
             if (null != paletteChanged)
                 paletteChanged(palette);
-        }
-
-        internal static void UpdateBrushToolbar()
-        {
-            BrushToolsAttribute toolAttribute = null;
-            if (instance.m_Brush != null)
-                toolAttribute = (BrushToolsAttribute)instance.m_Brush.GetType().GetCustomAttribute(typeof(BrushToolsAttribute), false);
-            TilemapEditorTool.UpdateEditorTools(toolAttribute);
         }
 
         internal static void UpdateActiveGridPalette()
