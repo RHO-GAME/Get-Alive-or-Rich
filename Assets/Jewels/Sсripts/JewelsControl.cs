@@ -20,22 +20,18 @@ public class JewelsControl : MonoBehaviour
     //comment for pc
 /*    private Vector2 mouseup;
     private Vector2 mousedown;*/
-    private enum State { right = 0, left = 1, up = 2, down = 3 };
+    private enum State { right = 0, left = 1, up = 2, down = 3, none = 4 };
     private List<List<int>> queue;
     private int a;
     void Start()
     {
         field = new List<List<GameObject>>();
-        GameObject tmp = null;
         for (int i = 0; i < 9; i++)
         {
             field.Add(new List<GameObject>());
             for (int j = 0; j < 9; j++)
             {
-                /*field[i].Add(Instantiate(empty));
-                field[i][j].transform.position = new Vector3(i, j, 0f);*/
                 field[i].Add(null);
-                //spawnNew(i, j);
             }
         }
         for (int i = 0; i < 9; i++)
@@ -57,7 +53,7 @@ public class JewelsControl : MonoBehaviour
             i1 += sign;
             while (count < length)
             {
-                spawnNew(i1, j1);
+                //spawnNew(i1, j1);
                 queue.Add(new List<int>() { i1, j1 });
                 i1 += sign;
                 count++;
@@ -68,7 +64,7 @@ public class JewelsControl : MonoBehaviour
             j1 += sign;
             while (count < length)
             {
-                spawnNew(i1, j1);
+                //spawnNew(i1, j1);
                 queue.Add(new List<int>() { i1, j1 });
                 j1 += sign;
                 count++;
@@ -76,8 +72,9 @@ public class JewelsControl : MonoBehaviour
             j1 -= sign;
             sign *= -1;
         }
-        spawnNew(4, 4);
-        queue.Add(new List<int>() { 4, 4 });*/
+        //spawnNew(4, 4);
+        queue.Add(new List<int>() { 4, 4 });
+        StartCoroutine(SlowSpawn(0));*/
         while (findTriples()) { }
     }
 
@@ -146,62 +143,58 @@ public class JewelsControl : MonoBehaviour
                 field[i - 1][j] = obj;
                 break;
         }
-        StartCoroutine(ExampleCoroutine());
+        //yield return new WaitForSeconds(0.5f);
         if (findTriples())
+        {
+            state = State.none;
             while (findTriples()) { }
+        }
         else
         {
-            pos = field[i][j].transform.position;
-            obj = field[i][j];
-            switch (state)
-            {
-                case State.up:
-                    field[i][j].GetComponentInChildren<Animator>().Play("layer.Up", 0, 0f);
-                    field[i][j + 1].GetComponentInChildren<Animator>().Play("layer.Down", 0, 0f);
-                    field[i][j].transform.position = field[i][j + 1].transform.position;
-                    field[i][j + 1].transform.position = pos;
-                    field[i][j] = field[i][j + 1];
-                    field[i][j + 1] = obj;
-                    break;
-                case State.down:
-                    field[i][j].GetComponentInChildren<Animator>().Play("layer.Down", 0, 0f);
-                    field[i][j - 1].GetComponentInChildren<Animator>().Play("layer.Up", 0, 0f);
-                    field[i][j].transform.position = field[i][j - 1].transform.position;
-                    field[i][j - 1].transform.position = pos;
-                    field[i][j] = field[i][j - 1];
-                    field[i][j - 1] = obj;
-                    break;
-                case State.right:
-                    field[i][j].GetComponentInChildren<Animator>().Play("layer.Right", 0, 0f);
-                    field[i + 1][j].GetComponentInChildren<Animator>().Play("layer.Left", 0, 0f);
-                    field[i][j].transform.position = field[i + 1][j].transform.position;
-                    field[i + 1][j].transform.position = pos;
-                    field[i][j] = field[i + 1][j];
-                    field[i + 1][j] = obj;
-                    break;
-                case State.left:
-                    field[i][j].GetComponentInChildren<Animator>().Play("layer.Left", 0, 0f);
-                    field[i - 1][j].GetComponentInChildren<Animator>().Play("layer.Right", 0, 0f);
-                    field[i][j].transform.position = field[i - 1][j].transform.position;
-                    field[i - 1][j].transform.position = pos;
-                    field[i][j] = field[i - 1][j];
-                    field[i - 1][j] = obj;
-                    break;
-            }
+            StartCoroutine(ExampleCoroutine(state, i, j));
         }
     }
 
-
-    IEnumerator ExampleCoroutine()
+    IEnumerator ExampleCoroutine(State state, int i, int j)
     {
-        //Print the time of when the function is first called.
-       // Debug.Log("Started Coroutine at timestamp : " + Time.time);
-
-        //yield on a new YieldInstruction that waits for 5 seconds.
-        yield return new WaitForSeconds(1f);
-
-        //After we have waited 5 seconds print the time again.
-       // Debug.Log("Finished Coroutine at timestamp : " + Time.time);
+        yield return new WaitForSeconds(0.5f);
+        Vector3 pos = field[i][j].transform.position;
+        GameObject obj = field[i][j];
+        switch (state)
+        {
+            case State.up:
+                field[i][j].GetComponentInChildren<Animator>().Play("layer.Up", 0, 0f);
+                field[i][j + 1].GetComponentInChildren<Animator>().Play("layer.Down", 0, 0f);
+                field[i][j].transform.position = field[i][j + 1].transform.position;
+                field[i][j + 1].transform.position = pos;
+                field[i][j] = field[i][j + 1];
+                field[i][j + 1] = obj;
+                break;
+            case State.down:
+                field[i][j].GetComponentInChildren<Animator>().Play("layer.Down", 0, 0f);
+                field[i][j - 1].GetComponentInChildren<Animator>().Play("layer.Up", 0, 0f);
+                field[i][j].transform.position = field[i][j - 1].transform.position;
+                field[i][j - 1].transform.position = pos;
+                field[i][j] = field[i][j - 1];
+                field[i][j - 1] = obj;
+                break;
+            case State.right:
+                field[i][j].GetComponentInChildren<Animator>().Play("layer.Right", 0, 0f);
+                field[i + 1][j].GetComponentInChildren<Animator>().Play("layer.Left", 0, 0f);
+                field[i][j].transform.position = field[i + 1][j].transform.position;
+                field[i + 1][j].transform.position = pos;
+                field[i][j] = field[i + 1][j];
+                field[i + 1][j] = obj;
+                break;
+            case State.left:
+                field[i][j].GetComponentInChildren<Animator>().Play("layer.Left", 0, 0f);
+                field[i - 1][j].GetComponentInChildren<Animator>().Play("layer.Right", 0, 0f);
+                field[i][j].transform.position = field[i - 1][j].transform.position;
+                field[i - 1][j].transform.position = pos;
+                field[i][j] = field[i - 1][j];
+                field[i - 1][j] = obj;
+                break;
+        }
     }
 
     State getSwipeState(Vector2 fingerDown, Vector2 fingerUp)
