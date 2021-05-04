@@ -20,7 +20,7 @@ m_EmbeddedPackageManifests:
 m_LocalPackages:
   m_LocalFileStatus: []
 m_ProjectPath: A:/Projects/Get-Alive-or-Rich/Packages
-m_EditorVersion: 2021.2.0a9 (5be3997fdbde)
+m_EditorVersion: 2021.2.0a14 (462ae11b66db)
 m_ResolvedPackages:
 - packageId: com.unity.2d.animation@6.0.1
   testable: 0
@@ -102,12 +102,8 @@ m_ResolvedPackages:
     - 6.0.0-pre.2
     - 6.0.1
     compatible:
-    - 5.0.3
-    - 5.0.4
-    - 6.0.0-pre.1
-    - 6.0.0-pre.2
     - 6.0.1
-    verified: 5.0.4
+    verified: 6.0.1
   dependencies:
   - name: com.unity.2d.common
     version: 5.0.0
@@ -150,8 +146,6 @@ m_ResolvedPackages:
     capabilities: 7
   hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 637526396800000000
   documentationUrl: 
@@ -208,11 +202,8 @@ m_ResolvedPackages:
     - 5.0.0-pre.2
     - 5.0.0
     compatible:
-    - 4.0.1
-    - 5.0.0-pre.1
-    - 5.0.0-pre.2
     - 5.0.0
-    verified: 4.0.1
+    verified: 5.0.0
   dependencies: []
   resolvedDependencies: []
   keywords:
@@ -229,8 +220,6 @@ m_ResolvedPackages:
     capabilities: 7
   hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 637526400420000000
   documentationUrl: 
@@ -302,11 +291,8 @@ m_ResolvedPackages:
     - 5.0.0-pre.2
     - 5.0.1
     compatible:
-    - 4.0.2
-    - 5.0.0-pre.1
-    - 5.0.0-pre.2
     - 5.0.1
-    verified: 4.0.2
+    verified: 5.0.1
   dependencies:
   - name: com.unity.2d.common
     version: 5.0.0
@@ -348,8 +334,6 @@ m_ResolvedPackages:
     capabilities: 7
   hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 637526398240000000
   documentationUrl: 
@@ -402,8 +386,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -486,12 +468,8 @@ m_ResolvedPackages:
     - 6.0.0-pre.2
     - 6.0.0
     compatible:
-    - 5.1.0
-    - 5.1.1
-    - 6.0.0-pre.1
-    - 6.0.0-pre.2
     - 6.0.0
-    verified: 5.1.1
+    verified: 6.0.0
   dependencies:
   - name: com.unity.mathematics
     version: 1.1.0
@@ -538,8 +516,6 @@ m_ResolvedPackages:
     capabilities: 7
   hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 637526400040000000
   documentationUrl: 
@@ -591,8 +567,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -689,8 +663,6 @@ m_ResolvedPackages:
     capabilities: 7
   hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 637314349270000000
   documentationUrl: 
@@ -763,8 +735,6 @@ m_ResolvedPackages:
     capabilities: 7
   hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 637502896060000000
   documentationUrl: 
@@ -836,8 +806,6 @@ m_ResolvedPackages:
     capabilities: 7
   hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 637486638490000000
   documentationUrl: 
@@ -898,8 +866,6 @@ m_ResolvedPackages:
     capabilities: 7
   hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 637394922300000000
   documentationUrl: 
@@ -965,8 +931,6 @@ m_ResolvedPackages:
     capabilities: 7
   hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 637479648140000000
   documentationUrl: 
@@ -1056,8 +1020,6 @@ m_ResolvedPackages:
     capabilities: 7
   hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 637411581370000000
   documentationUrl: 
@@ -1147,8 +1109,6 @@ m_ResolvedPackages:
     capabilities: 7
   hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 637505702940000000
   documentationUrl: 
@@ -1271,7 +1231,6 @@ m_ResolvedPackages:
     - 3.0.3
     - 3.0.4
     compatible:
-    - 3.0.3
     - 3.0.4
     verified: 3.0.4
   dependencies:
@@ -1299,8 +1258,6 @@ m_ResolvedPackages:
     capabilities: 7
   hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 637492944820000000
   documentationUrl: 
@@ -1393,7 +1350,6 @@ m_ResolvedPackages:
     - 1.6.0-pre.1
     - 1.6.0-pre.3
     compatible:
-    - 1.6.0-pre.1
     - 1.6.0-pre.3
     verified: 1.6.0-pre.3
   dependencies:
@@ -1429,8 +1385,6 @@ m_ResolvedPackages:
     capabilities: 7
   hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 637510729450000000
   documentationUrl: 
@@ -1494,8 +1448,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -1541,7 +1493,6 @@ m_ResolvedPackages:
     - 1.5.2
     - 1.6.0-pre.3
     compatible:
-    - 1.5.1
     - 1.5.2
     - 1.6.0-pre.3
     verified: 1.5.2
@@ -1589,8 +1540,6 @@ m_ResolvedPackages:
     capabilities: 7
   hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 637509974430000000
   documentationUrl: 
@@ -1640,8 +1589,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -1690,8 +1637,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -1741,8 +1686,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -1792,8 +1735,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -1843,8 +1784,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -1898,8 +1837,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -1957,8 +1894,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -2009,8 +1944,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -2060,8 +1993,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -2111,8 +2042,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -2162,8 +2091,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -2213,8 +2140,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -2264,8 +2189,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -2319,8 +2242,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -2370,8 +2291,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -2429,8 +2348,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -2483,8 +2400,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -2534,8 +2449,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -2601,8 +2514,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -2652,8 +2563,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -2711,8 +2620,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -2762,8 +2669,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -2821,8 +2726,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -2880,8 +2783,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -2939,8 +2840,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -3014,8 +2913,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -3069,8 +2966,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -3132,8 +3027,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -3197,8 +3090,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -3248,8 +3139,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -3311,8 +3200,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -3366,8 +3253,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -3428,8 +3313,6 @@ m_ResolvedPackages:
     capabilities: 0
   hasRegistry: 0
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -3487,8 +3370,6 @@ m_ResolvedPackages:
     capabilities: 7
   hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 637429759280000000
   documentationUrl: 
@@ -3552,8 +3433,6 @@ m_ResolvedPackages:
     capabilities: 7
   hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 637324062630000000
   documentationUrl: 
@@ -3607,11 +3486,8 @@ m_ResolvedPackages:
     - 5.0.0-pre.2
     - 5.0.0
     compatible:
-    - 4.0.3
-    - 5.0.0-pre.1
-    - 5.0.0-pre.2
     - 5.0.0
-    verified: 4.0.3
+    verified: 5.0.0
   dependencies:
   - name: com.unity.2d.sprite
     version: 1.0.0
@@ -3641,8 +3517,6 @@ m_ResolvedPackages:
     capabilities: 7
   hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 637526395060000000
   documentationUrl: 
@@ -3694,11 +3568,8 @@ m_ResolvedPackages:
     - 5.0.0-pre.2
     - 5.0.0
     compatible:
-    - 4.0.1
-    - 5.0.0-pre.1
-    - 5.0.0-pre.2
     - 5.0.0
-    verified: 4.0.1
+    verified: 5.0.0
   dependencies: []
   resolvedDependencies: []
   keywords:
@@ -3713,8 +3584,6 @@ m_ResolvedPackages:
     capabilities: 7
   hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 637526399200000000
   documentationUrl: 

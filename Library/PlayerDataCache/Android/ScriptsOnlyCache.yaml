@@ -8,6 +8,7 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
+    - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.IK.Runtime.dll:
     - UnityEditor.U2D.IK.IKEditorManagerHelper
     Unity.2D.Tilemap.Editor.dll:
@@ -25,11 +26,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateEditor
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -68,7 +66,7 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 3706}
+      Script: {instanceID: 3714}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -103,23 +101,23 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1516}
-    - Class: 114
       Script: {instanceID: 1518}
     - Class: 114
-      Script: {instanceID: 2540}
+      Script: {instanceID: 1520}
     - Class: 114
-      Script: {instanceID: 2644}
+      Script: {instanceID: 2548}
     - Class: 114
-      Script: {instanceID: 2860}
+      Script: {instanceID: 2652}
     - Class: 114
-      Script: {instanceID: 3156}
+      Script: {instanceID: 2868}
     - Class: 114
-      Script: {instanceID: 5704}
+      Script: {instanceID: 3164}
     - Class: 114
-      Script: {instanceID: 5946}
+      Script: {instanceID: 5712}
     - Class: 114
-      Script: {instanceID: 6474}
+      Script: {instanceID: 5956}
+    - Class: 114
+      Script: {instanceID: 6484}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128

@@ -14,7 +14,7 @@ public class JewelsControl : MonoBehaviour
     public GameObject yellow;
     public GameObject empty;
     private List<List<GameObject>> field;
-    
+
     private Vector2 fingerUp;
     private Vector2 fingerDown;
     private enum State { right = 0, left = 1, up = 2, down = 3 };
@@ -29,8 +29,16 @@ public class JewelsControl : MonoBehaviour
             field.Add(new List<GameObject>());
             for (int j = 0; j < 9; j++)
             {
-                field[i].Add(Instantiate(empty));
-                field[i][j].transform.position = new Vector3(i, j, 0f);
+                /*field[i].Add(Instantiate(empty));
+                field[i][j].transform.position = new Vector3(i, j, 0f);*/
+                field[i].Add(null);
+                //spawnNew(i, j);
+            }
+        }
+        for (int i = 0; i < 9; i++)
+        {
+            for (int j = 0; j < 9; j++)
+            {
                 spawnNew(i, j);
             }
         }
@@ -65,7 +73,9 @@ public class JewelsControl : MonoBehaviour
             j1 -= sign;
             sign *= -1;
         }
-        //findTriples();*/
+        spawnNew(4, 4);
+        queue.Add(new List<int>() { 4, 4 });*/
+        while (findTriples()) { }
     }
 
     void Update()
@@ -97,7 +107,7 @@ public class JewelsControl : MonoBehaviour
     {
         Vector3 pos = field[i][j].transform.position;
         GameObject obj = field[i][j];
-        switch(state)
+        switch (state)
         {
             case State.up:
                 field[i][j].GetComponentInChildren<Animator>().Play("layer.Up", 0, 0f);
@@ -116,7 +126,7 @@ public class JewelsControl : MonoBehaviour
                 field[i][j - 1] = obj;
                 break;
             case State.right:
-                 field[i][j].GetComponentInChildren<Animator>().Play("layer.Right", 0, 0f);
+                field[i][j].GetComponentInChildren<Animator>().Play("layer.Right", 0, 0f);
                 field[i + 1][j].GetComponentInChildren<Animator>().Play("layer.Left", 0, 0f);
                 field[i][j].transform.position = field[i + 1][j].transform.position;
                 field[i + 1][j].transform.position = pos;
@@ -131,6 +141,48 @@ public class JewelsControl : MonoBehaviour
                 field[i][j] = field[i - 1][j];
                 field[i - 1][j] = obj;
                 break;
+        }
+        if (findTriples())
+            while (findTriples()) { }
+        else
+        {
+            pos = field[i][j].transform.position;
+            obj = field[i][j];
+            switch (state)
+            {
+                case State.up:
+                    field[i][j].GetComponentInChildren<Animator>().Play("layer.Up", 0, 0f);
+                    field[i][j + 1].GetComponentInChildren<Animator>().Play("layer.Down", 0, 0f);
+                    field[i][j].transform.position = field[i][j + 1].transform.position;
+                    field[i][j + 1].transform.position = pos;
+                    field[i][j] = field[i][j + 1];
+                    field[i][j + 1] = obj;
+                    break;
+                case State.down:
+                    field[i][j].GetComponentInChildren<Animator>().Play("layer.Down", 0, 0f);
+                    field[i][j - 1].GetComponentInChildren<Animator>().Play("layer.Up", 0, 0f);
+                    field[i][j].transform.position = field[i][j - 1].transform.position;
+                    field[i][j - 1].transform.position = pos;
+                    field[i][j] = field[i][j - 1];
+                    field[i][j - 1] = obj;
+                    break;
+                case State.right:
+                    field[i][j].GetComponentInChildren<Animator>().Play("layer.Right", 0, 0f);
+                    field[i + 1][j].GetComponentInChildren<Animator>().Play("layer.Left", 0, 0f);
+                    field[i][j].transform.position = field[i + 1][j].transform.position;
+                    field[i + 1][j].transform.position = pos;
+                    field[i][j] = field[i + 1][j];
+                    field[i + 1][j] = obj;
+                    break;
+                case State.left:
+                    field[i][j].GetComponentInChildren<Animator>().Play("layer.Left", 0, 0f);
+                    field[i - 1][j].GetComponentInChildren<Animator>().Play("layer.Right", 0, 0f);
+                    field[i][j].transform.position = field[i - 1][j].transform.position;
+                    field[i - 1][j].transform.position = pos;
+                    field[i][j] = field[i - 1][j];
+                    field[i - 1][j] = obj;
+                    break;
+            }
         }
     }
 
@@ -164,19 +216,22 @@ public class JewelsControl : MonoBehaviour
         }
     }
 
-    void findTriples()
+    bool findTriples()
     {
+        bool flag = false;
         List<List<int>> forDestroy = new List<List<int>>();
         for (int i = 1; i < field.Count - 1; i++)
         {
-           for (int j = 0; j < field[i].Count; j++)
+            for (int j = 0; j < field[i].Count; j++)
             {
-                if (field[i][j].tag == field[i + 1][j].tag && field[i][j].tag == field[i - 1][j].tag)
-                {
-                    forDestroy.Add(new List<int>() { i, j });
-                    forDestroy.Add(new List<int>() { i + 1, j });
-                    forDestroy.Add(new List<int>() { i - 1, j });
-                }
+                if (field[i][j] != null && field[i + 1][j] != null && field[i - 1][j] != null)
+                    if (field[i][j].tag == field[i + 1][j].tag && field[i][j].tag == field[i - 1][j].tag)
+                    {
+                        forDestroy.Add(new List<int>() { i, j });
+                        forDestroy.Add(new List<int>() { i + 1, j });
+                        forDestroy.Add(new List<int>() { i - 1, j });
+                        flag = true;
+                    }
             }
         }
 
@@ -184,28 +239,72 @@ public class JewelsControl : MonoBehaviour
         {
             for (int j = 1; j < field[i].Count - 1; j++)
             {
-                if (field[i][j].tag == field[i][j + 1].tag && field[i][j].tag == field[i][j - 1].tag)
-                {
-                    forDestroy.Add(new List<int>() { i, j });
-                    forDestroy.Add(new List<int>() { i, j + 1 });
-                    forDestroy.Add(new List<int>() { i, j - 1 });
-                }
+                if (field[i][j] != null && field[i][j + 1] != null && field[i][j - 1] != null)
+                    if (field[i][j].tag == field[i][j + 1].tag && field[i][j].tag == field[i][j - 1].tag)
+                    {
+                        forDestroy.Add(new List<int>() { i, j });
+                        forDestroy.Add(new List<int>() { i, j + 1 });
+                        forDestroy.Add(new List<int>() { i, j - 1 });
+                        flag = true;
+                    }
             }
         }
 
-        foreach (List<int> i in forDestroy)
-        {
-            if (field[i[0]][i[1]] != null)
+        if (forDestroy.Count > 0)
+            foreach (List<int> i in forDestroy)
             {
-                Destroy(field[i[0]][i[1]]);
-                field[i[0]][i[1]] = null;
+                if (field[i[0]][i[1]] != null)
+                {
+                    Destroy(field[i[0]][i[1]]);
+                    field[i[0]][i[1]] = null;
+                }
             }
+        if (!flag)
+        {
+            for (int i = 0; i < field.Count; i++)
+                for (int j = 0; j < field[0].Count; j++)
+                {
+                    if (field[i][j] == null)
+                    {
+                        //fall on empty place
+                        int tmp = j + 1;
+                        if (tmp == field[0].Count)
+                            tmp--;
+                        while (field[i][tmp] == null && tmp < field[0].Count - 1)
+                            tmp++;
+                        if (tmp == field[0].Count - 1)
+                        {
+                            if (field[i][tmp] != null)
+                            {
+                                field[i][j] = field[i][tmp];
+                                field[i][j].transform.position = new Vector3(i, j, 0f);
+                                field[i][tmp] = null;
+                            }
+                            else
+                            {
+                                spawnNew(i, j);
+                            }
+                        }
+                        else
+                        {
+                            field[i][j] = field[i][tmp];
+                            field[i][j].transform.position = new Vector3(i, j, 0f);
+                            field[i][tmp] = null;
+                        }
+                        flag = true;
+                    }
+                }
+            if (flag)
+                findTriples();
         }
+        return flag;
     }
 
     public void spawnNew(int i1, int j1)
     {
         GameObject tmp = null;
+        field[i1][j1] = Instantiate(empty);
+        field[i1][j1].transform.position = new Vector3(i1, j1, 0f);
         switch (Random.Range(0, 7))
         {
             case 0:
@@ -240,6 +339,7 @@ public class JewelsControl : MonoBehaviour
         tmp.transform.parent = field[i1][j1].transform;
         tmp.transform.position = field[i1][j1].transform.position;
         tmp.GetComponentInChildren<Animator>().Play("layer.Spawn", 0, 0f);
+        //findTriples();
     }
 
     void startAppearing()
