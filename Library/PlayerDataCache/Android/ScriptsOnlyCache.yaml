@@ -19,15 +19,15 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
     - UnityEditor.Tilemaps.TilemapPrefabStageHelper
-    Unity.Mobile.AndroidLogcat.Editor.dll:
-    - Unity.Android.Logcat.AndroidLogcatManager
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -42,7 +42,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Image
     - UnityEngine.UI.Text
   sceneClasses:
-    Assets/Jewels/Scenes/Jewel.unity:
+    Assets/Jewels/Scenes/Jewel_1.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -66,7 +66,17 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 3714}
+      Script: {instanceID: 1520}
+    - Class: 114
+      Script: {instanceID: 2662}
+    - Class: 114
+      Script: {instanceID: 2878}
+    - Class: 114
+      Script: {instanceID: 3724}
+    - Class: 114
+      Script: {instanceID: 5966}
+    - Class: 114
+      Script: {instanceID: 6494}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -76,6 +86,12 @@ ScriptsOnlyBuild:
     - Class: 212
       Script: {instanceID: 0}
     - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
       Script: {instanceID: 0}
     Assets/Main/MainGame.unity:
     - Class: 1
@@ -105,19 +121,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1520}
     - Class: 114
-      Script: {instanceID: 2548}
+      Script: {instanceID: 2558}
     - Class: 114
-      Script: {instanceID: 2652}
+      Script: {instanceID: 2662}
     - Class: 114
-      Script: {instanceID: 2868}
+      Script: {instanceID: 2878}
     - Class: 114
-      Script: {instanceID: 3164}
+      Script: {instanceID: 3174}
     - Class: 114
-      Script: {instanceID: 5712}
+      Script: {instanceID: 5722}
     - Class: 114
-      Script: {instanceID: 5956}
+      Script: {instanceID: 5966}
     - Class: 114
-      Script: {instanceID: 6484}
+      Script: {instanceID: 6494}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1052,5 +1068,5 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Main/MainGame.unity
-  - Assets/Jewels/Scenes/Jewel.unity
-  playerPath: C:/Users/Roman/Desktop/gaor.apk
+  - Assets/Jewels/Scenes/Jewel_1.unity
+  playerPath: C:/Users/User/Desktop/tmp.apk

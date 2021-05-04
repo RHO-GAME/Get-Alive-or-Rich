@@ -15,11 +15,11 @@ A:/Projects/Get-Alive-or-Rich
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-60192
+49918
 Successfully changed project path to: A:/Projects/Get-Alive-or-Rich
 A:/Projects/Get-Alive-or-Rich
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 83.51 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 858.76 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.2.0a14 (462ae11b66db)
 [Subsystems] Discovering subsystems at path A:/ProgF/Unity/2021.2.0a14/Editor/Data/Resources/UnitySubsystems
@@ -35,5 +35,5 @@ Initialize mono
 Mono path[0] = 'A:/ProgF/Unity/2021.2.0a14/Editor/Data/Managed'
 Mono path[1] = 'A:/ProgF/Unity/2021.2.0a14/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'A:/ProgF/Unity/2021.2.0a14/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56616
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56084
 Begin MonoManager ReloadAssembly

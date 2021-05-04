@@ -17,6 +17,9 @@ public class JewelsControl : MonoBehaviour
 
     private Vector2 fingerUp;
     private Vector2 fingerDown;
+    //comment for pc
+/*    private Vector2 mouseup;
+    private Vector2 mousedown;*/
     private enum State { right = 0, left = 1, up = 2, down = 3 };
     private List<List<int>> queue;
     private int a;
@@ -89,6 +92,7 @@ public class JewelsControl : MonoBehaviour
             else if (touch.phase == TouchPhase.Ended)
             {
                 fingerUp = touch.position;
+
                 Debug.Log(touch.position.x + " " + touch.position.y);
                 Vector2 pos = Camera.main.ScreenToWorldPoint(fingerDown);
                 for (int i = 0; i < field.Count; i++)
@@ -142,6 +146,7 @@ public class JewelsControl : MonoBehaviour
                 field[i - 1][j] = obj;
                 break;
         }
+        StartCoroutine(ExampleCoroutine());
         if (findTriples())
             while (findTriples()) { }
         else
@@ -184,6 +189,19 @@ public class JewelsControl : MonoBehaviour
                     break;
             }
         }
+    }
+
+
+    IEnumerator ExampleCoroutine()
+    {
+        //Print the time of when the function is first called.
+       // Debug.Log("Started Coroutine at timestamp : " + Time.time);
+
+        //yield on a new YieldInstruction that waits for 5 seconds.
+        yield return new WaitForSeconds(1f);
+
+        //After we have waited 5 seconds print the time again.
+       // Debug.Log("Finished Coroutine at timestamp : " + Time.time);
     }
 
     State getSwipeState(Vector2 fingerDown, Vector2 fingerUp)
