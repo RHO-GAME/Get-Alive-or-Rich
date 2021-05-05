@@ -14,6 +14,12 @@ public class JewelsControl : MonoBehaviour
     public GameObject yellow;
     public GameObject empty;
     private List<List<GameObject>> field;
+    public bool level1;
+    public bool level2;
+    public bool level3;
+    public bool level4;
+    public bool level5;
+    public bool level6;
 
     private Vector2 fingerUp;
     private Vector2 fingerDown;
@@ -25,20 +31,60 @@ public class JewelsControl : MonoBehaviour
     private int a;
     void Start()
     {
+<<<<<<< Updated upstream
         field = new List<List<GameObject>>();
         for (int i = 0; i < 9; i++)
+=======
+        if (level1)
+>>>>>>> Stashed changes
         {
-            field.Add(new List<GameObject>());
-            for (int j = 0; j < 9; j++)
+            field = new List<List<GameObject>>();
+            GameObject tmp = null;
+            for (int i = 0; i < 9; i++)
             {
+<<<<<<< Updated upstream
                 field[i].Add(null);
+=======
+                field.Add(new List<GameObject>());
+                for (int j = 0; j < 9; j++)
+                {
+                    /*field[i].Add(Instantiate(empty));
+                    field[i][j].transform.position = new Vector3(i, j, 0f);*/
+                    field[i].Add(null);
+                    //spawnNew(i, j);
+                }
+            }
+            for (int i = 0; i < 9; i++)
+            {
+                for (int j = 0; j < 9; j++)
+                {
+                    spawnNew(i, j);
+                }
+>>>>>>> Stashed changes
             }
         }
-        for (int i = 0; i < 9; i++)
+        else if (level6)
         {
-            for (int j = 0; j < 9; j++)
+            field = new List<List<GameObject>>();
+            GameObject tmp = null;
+            for (int i = 0; i < 9; i++)
             {
-                spawnNew(i, j);
+                field.Add(new List<GameObject>());
+                for (int j = 0; j < 9; j++)
+                {
+                    /*field[i].Add(Instantiate(empty));
+                    field[i][j].transform.position = new Vector3(i, j, 0f);*/
+                    field[i].Add(null);
+                    //spawnNew(i, j);
+                }
+            }
+            for (int i = 0; i < 9; i++)
+            {
+                for (int j = 0; j < 9; j++)
+                {
+                    if ((i != 1 && j != 1) || (i != 4) || (j != 4) || (i != 7 && j != 1) || ( i!= 1 && j!=7 ) || (j!= 7 && i!=7 ))
+                    spawnNew(i, j);
+                }
             }
         }
         /*queue = new List<List<int>>();
