@@ -120,6 +120,10 @@
 -define:PACKAGE_UITOOLKIT
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
+-r:"A:/Get-Alive-or-Rich/Get-Alive-or-Rich/Library/PackageCache/com.unity.visualscripting@1.5.2/Editor/VisualScripting.Core/Dependencies/DotNetZip/IonicZip.dll"
+-r:"A:/Get-Alive-or-Rich/Get-Alive-or-Rich/Library/PackageCache/com.unity.visualscripting@1.5.2/Editor/VisualScripting.Core/Dependencies/YamlDotNet/YamlDotNet.dll"
+-r:"A:/Get-Alive-or-Rich/Get-Alive-or-Rich/Library/PackageCache/com.unity.visualscripting@1.5.2/Runtime/VisualScripting.Core/Dependencies/MiscUtil/MiscUtil.dll"
+-r:"A:/Get-Alive-or-Rich/Get-Alive-or-Rich/Library/PackageCache/com.unity.visualscripting@1.5.2/Runtime/VisualScripting.Flow/Dependencies/NCalc/Antlr3.Runtime.dll"
 -r:"A:/ProgF/Unity/2021.2.0a14/Editor/Data/Managed/UnityEditor.Graphs.dll"
 -r:"A:/ProgF/Unity/2021.2.0a14/Editor/Data/Managed/UnityEngine/UnityEditor.CoreModule.dll"
 -r:"A:/ProgF/Unity/2021.2.0a14/Editor/Data/Managed/UnityEngine/UnityEditor.DeviceSimulatorModule.dll"
@@ -316,10 +320,6 @@
 -r:"A:/ProgF/Unity/2021.2.0a14/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll"
 -r:"A:/ProgF/Unity/2021.2.0a14/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll"
 -r:"A:/ProgF/Unity/2021.2.0a14/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll"
--r:"A:/Projects/Get-Alive-or-Rich/Library/PackageCache/com.unity.visualscripting@1.5.2/Editor/VisualScripting.Core/Dependencies/DotNetZip/IonicZip.dll"
--r:"A:/Projects/Get-Alive-or-Rich/Library/PackageCache/com.unity.visualscripting@1.5.2/Editor/VisualScripting.Core/Dependencies/YamlDotNet/YamlDotNet.dll"
--r:"A:/Projects/Get-Alive-or-Rich/Library/PackageCache/com.unity.visualscripting@1.5.2/Runtime/VisualScripting.Core/Dependencies/MiscUtil/MiscUtil.dll"
--r:"A:/Projects/Get-Alive-or-Rich/Library/PackageCache/com.unity.visualscripting@1.5.2/Runtime/VisualScripting.Flow/Dependencies/NCalc/Antlr3.Runtime.dll"
 "Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/EventData/AxisEventData.cs"
 "Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/EventData/BaseEventData.cs"
 "Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/EventData/PointerEventData.cs"

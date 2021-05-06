@@ -170,6 +170,12 @@ MonoBehaviour:
   red: {fileID: 7304173727448821559, guid: 727dcad298c568646ae3313d7092b3cd, type: 3}
   yellow: {fileID: 7096514953115161026, guid: 07d978cedf23e6a45af7c9fdfccbd253, type: 3}
   empty: {fileID: 1976984025}
+  level1: 1
+  level2: 0
+  level3: 0
+  level4: 0
+  level5: 0
+  level6: 0
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -239,6 +245,7 @@ GameObject:
   - component: {fileID: 747913147}
   - component: {fileID: 747913146}
   - component: {fileID: 747913145}
+  - component: {fileID: 747913149}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -329,6 +336,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!95 &747913149
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 747913144}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cfc54d70fe377744b8f4dee0929a1b66, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &748160692
 GameObject:
   m_ObjectHideFlags: 0

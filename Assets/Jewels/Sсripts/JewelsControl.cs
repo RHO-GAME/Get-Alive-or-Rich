@@ -24,27 +24,19 @@ public class JewelsControl : MonoBehaviour
     private Vector2 fingerUp;
     private Vector2 fingerDown;
     //comment for pc
-/*    private Vector2 mouseup;
-    private Vector2 mousedown;*/
-    private enum State { right = 0, left = 1, up = 2, down = 3, none = 4 };
+    /*    private Vector2 mouseup;
+        private Vector2 mousedown;*/
+    private enum State { right = 0, left = 1, up = 2, down = 3 };
     private List<List<int>> queue;
     private int a;
     void Start()
     {
-<<<<<<< Updated upstream
-        field = new List<List<GameObject>>();
-        for (int i = 0; i < 9; i++)
-=======
         if (level1)
->>>>>>> Stashed changes
         {
             field = new List<List<GameObject>>();
             GameObject tmp = null;
             for (int i = 0; i < 9; i++)
             {
-<<<<<<< Updated upstream
-                field[i].Add(null);
-=======
                 field.Add(new List<GameObject>());
                 for (int j = 0; j < 9; j++)
                 {
@@ -60,7 +52,6 @@ public class JewelsControl : MonoBehaviour
                 {
                     spawnNew(i, j);
                 }
->>>>>>> Stashed changes
             }
         }
         else if (level6)
@@ -82,8 +73,8 @@ public class JewelsControl : MonoBehaviour
             {
                 for (int j = 0; j < 9; j++)
                 {
-                    if ((i != 1 && j != 1) || (i != 4) || (j != 4) || (i != 7 && j != 1) || ( i!= 1 && j!=7 ) || (j!= 7 && i!=7 ))
-                    spawnNew(i, j);
+                    if ((i != 1 && j != 1) || (i != 4) || (j != 4) || (i != 7 && j != 1) || (i != 1 && j != 7) || (j != 7 && i != 7))
+                        spawnNew(i, j);
                 }
             }
         }
@@ -99,7 +90,7 @@ public class JewelsControl : MonoBehaviour
             i1 += sign;
             while (count < length)
             {
-                //spawnNew(i1, j1);
+                spawnNew(i1, j1);
                 queue.Add(new List<int>() { i1, j1 });
                 i1 += sign;
                 count++;
@@ -110,7 +101,7 @@ public class JewelsControl : MonoBehaviour
             j1 += sign;
             while (count < length)
             {
-                //spawnNew(i1, j1);
+                spawnNew(i1, j1);
                 queue.Add(new List<int>() { i1, j1 });
                 j1 += sign;
                 count++;
@@ -118,9 +109,8 @@ public class JewelsControl : MonoBehaviour
             j1 -= sign;
             sign *= -1;
         }
-        //spawnNew(4, 4);
-        queue.Add(new List<int>() { 4, 4 });
-        StartCoroutine(SlowSpawn(0));*/
+        spawnNew(4, 4);
+        queue.Add(new List<int>() { 4, 4 });*/
         while (findTriples()) { }
     }
 
@@ -189,57 +179,11 @@ public class JewelsControl : MonoBehaviour
                 field[i - 1][j] = obj;
                 break;
         }
-        //yield return new WaitForSeconds(0.5f);
         if (findTriples())
-        {
-            state = State.none;
             while (findTriples()) { }
-        }
         else
         {
-            StartCoroutine(ExampleCoroutine(state, i, j));
-        }
-    }
-
-    IEnumerator ExampleCoroutine(State state, int i, int j)
-    {
-        yield return new WaitForSeconds(0.5f);
-        Vector3 pos = field[i][j].transform.position;
-        GameObject obj = field[i][j];
-        switch (state)
-        {
-            case State.up:
-                field[i][j].GetComponentInChildren<Animator>().Play("layer.Up", 0, 0f);
-                field[i][j + 1].GetComponentInChildren<Animator>().Play("layer.Down", 0, 0f);
-                field[i][j].transform.position = field[i][j + 1].transform.position;
-                field[i][j + 1].transform.position = pos;
-                field[i][j] = field[i][j + 1];
-                field[i][j + 1] = obj;
-                break;
-            case State.down:
-                field[i][j].GetComponentInChildren<Animator>().Play("layer.Down", 0, 0f);
-                field[i][j - 1].GetComponentInChildren<Animator>().Play("layer.Up", 0, 0f);
-                field[i][j].transform.position = field[i][j - 1].transform.position;
-                field[i][j - 1].transform.position = pos;
-                field[i][j] = field[i][j - 1];
-                field[i][j - 1] = obj;
-                break;
-            case State.right:
-                field[i][j].GetComponentInChildren<Animator>().Play("layer.Right", 0, 0f);
-                field[i + 1][j].GetComponentInChildren<Animator>().Play("layer.Left", 0, 0f);
-                field[i][j].transform.position = field[i + 1][j].transform.position;
-                field[i + 1][j].transform.position = pos;
-                field[i][j] = field[i + 1][j];
-                field[i + 1][j] = obj;
-                break;
-            case State.left:
-                field[i][j].GetComponentInChildren<Animator>().Play("layer.Left", 0, 0f);
-                field[i - 1][j].GetComponentInChildren<Animator>().Play("layer.Right", 0, 0f);
-                field[i][j].transform.position = field[i - 1][j].transform.position;
-                field[i - 1][j].transform.position = pos;
-                field[i][j] = field[i - 1][j];
-                field[i - 1][j] = obj;
-                break;
+            StartCoroutine(moveBack(state, i, j));
         }
     }
 
@@ -306,13 +250,13 @@ public class JewelsControl : MonoBehaviour
                     }
             }
         }
-
         if (forDestroy.Count > 0)
             foreach (List<int> i in forDestroy)
             {
                 if (field[i[0]][i[1]] != null)
                 {
-                    Destroy(field[i[0]][i[1]]);
+                    //Destroy(field[i[0]][i[1]]);
+                    StartCoroutine(slowDestroy(field[i[0]][i[1]]));
                     field[i[0]][i[1]] = null;
                 }
             }
@@ -334,19 +278,25 @@ public class JewelsControl : MonoBehaviour
                             if (field[i][tmp] != null)
                             {
                                 field[i][j] = field[i][tmp];
-                                field[i][j].transform.position = new Vector3(i, j, 0f);
+                                //field[i][j].transform.position = new Vector3(i, j, 0f);
+                                StartCoroutine(moveDown(field[i][j], i, j, tmp));
                                 field[i][tmp] = null;
+                                //field[i][j].GetComponentInChildren<Animator>().Play("layer.MoveDown" + (tmp - j), 0, 0f);
                             }
                             else
                             {
                                 spawnNew(i, j);
+                                field[i][j].GetComponentInChildren<Animator>().Play("layer.None" , 0, 0f);
+                                StartCoroutine(slowAppear(field[i][j]));
                             }
                         }
                         else
                         {
                             field[i][j] = field[i][tmp];
-                            field[i][j].transform.position = new Vector3(i, j, 0f);
+                            //field[i][j].transform.position = new Vector3(i, j, 0f);
+                            StartCoroutine(moveDown(field[i][j], i, j, tmp));
                             field[i][tmp] = null;
+                            //field[i][j].GetComponentInChildren<Animator>().Play("layer.MoveDown" + (tmp - j), 0, 0f);
                         }
                         flag = true;
                     }
@@ -410,4 +360,68 @@ public class JewelsControl : MonoBehaviour
         a++;
         field[queue[a][0]][queue[a][1]].GetComponentInChildren<Animator>().Play("layer.Spawn", 0, 0f);
     }
+
+    IEnumerator moveBack(State state, int i, int j)
+    {
+        yield return new WaitForSeconds(0.5f);
+        Vector3 pos = field[i][j].transform.position;
+        GameObject obj = field[i][j];
+        switch (state)
+        {
+            case State.up:
+                field[i][j].GetComponentInChildren<Animator>().Play("layer.Up", 0, 0f);
+                field[i][j + 1].GetComponentInChildren<Animator>().Play("layer.Down", 0, 0f);
+                field[i][j].transform.position = field[i][j + 1].transform.position;
+                field[i][j + 1].transform.position = pos;
+                field[i][j] = field[i][j + 1];
+                field[i][j + 1] = obj;
+                break;
+            case State.down:
+                field[i][j].GetComponentInChildren<Animator>().Play("layer.Down", 0, 0f);
+                field[i][j - 1].GetComponentInChildren<Animator>().Play("layer.Up", 0, 0f);
+                field[i][j].transform.position = field[i][j - 1].transform.position;
+                field[i][j - 1].transform.position = pos;
+                field[i][j] = field[i][j - 1];
+                field[i][j - 1] = obj;
+                break;
+            case State.right:
+                field[i][j].GetComponentInChildren<Animator>().Play("layer.Right", 0, 0f);
+                field[i + 1][j].GetComponentInChildren<Animator>().Play("layer.Left", 0, 0f);
+                field[i][j].transform.position = field[i + 1][j].transform.position;
+                field[i + 1][j].transform.position = pos;
+                field[i][j] = field[i + 1][j];
+                field[i + 1][j] = obj;
+                break;
+            case State.left:
+                field[i][j].GetComponentInChildren<Animator>().Play("layer.Left", 0, 0f);
+                field[i - 1][j].GetComponentInChildren<Animator>().Play("layer.Right", 0, 0f);
+                field[i][j].transform.position = field[i - 1][j].transform.position;
+                field[i - 1][j].transform.position = pos;
+                field[i][j] = field[i - 1][j];
+                field[i - 1][j] = obj;
+                break;
+        }
+    }
+
+    IEnumerator moveDown(GameObject moveable, int i, int j, int tmp)
+    {
+        yield return new WaitForSeconds(0.5f);
+        moveable.transform.position = new Vector3(i, j, 0f);
+        moveable.GetComponentInChildren<Animator>().Play("layer.MoveDown" + (tmp - j), 0, 0f);
+    }
+
+    IEnumerator slowAppear(GameObject tmp)
+    {
+        yield return new WaitForSeconds(0.5f);
+        tmp.GetComponentInChildren<Animator>().Play("layer.Spawn", 0, 0f);
+    }
+
+    IEnumerator slowDestroy(GameObject tmp)
+    {
+        yield return new WaitForSeconds(0.5f);
+        tmp.GetComponentInChildren<Animator>().Play("layer.Destroy", 0, 0f);
+        yield return new WaitForSeconds(0.5f);
+        Destroy(tmp);
+    }
+
 }

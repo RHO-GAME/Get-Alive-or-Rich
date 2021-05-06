@@ -115,6 +115,8 @@
 -define:ENABLE_LEGACY_INPUT_MANAGER
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
+-r:"A:/Get-Alive-or-Rich/Get-Alive-or-Rich/Library/PackageCache/com.unity.visualscripting@1.5.2/Runtime/VisualScripting.Core/Dependencies/MiscUtil/MiscUtil.dll"
+-r:"A:/Get-Alive-or-Rich/Get-Alive-or-Rich/Library/PackageCache/com.unity.visualscripting@1.5.2/Runtime/VisualScripting.Flow/Dependencies/NCalc/Antlr3.Runtime.dll"
 -r:"A:/ProgF/Unity/2021.2.0a14/Editor/Data/Managed/UnityEngine/UnityEditor.CoreModule.dll"
 -r:"A:/ProgF/Unity/2021.2.0a14/Editor/Data/Managed/UnityEngine/UnityEditor.DeviceSimulatorModule.dll"
 -r:"A:/ProgF/Unity/2021.2.0a14/Editor/Data/Managed/UnityEngine/UnityEditor.DiagnosticsModule.dll"
@@ -308,8 +310,6 @@
 -r:"A:/ProgF/Unity/2021.2.0a14/Editor/Data/NetStandard/Extensions/2.0.0/System.Numerics.Vectors.dll"
 -r:"A:/ProgF/Unity/2021.2.0a14/Editor/Data/NetStandard/Extensions/2.0.0/System.Runtime.InteropServices.WindowsRuntime.dll"
 -r:"A:/ProgF/Unity/2021.2.0a14/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll"
--r:"A:/Projects/Get-Alive-or-Rich/Library/PackageCache/com.unity.visualscripting@1.5.2/Runtime/VisualScripting.Core/Dependencies/MiscUtil/MiscUtil.dll"
--r:"A:/Projects/Get-Alive-or-Rich/Library/PackageCache/com.unity.visualscripting@1.5.2/Runtime/VisualScripting.Flow/Dependencies/NCalc/Antlr3.Runtime.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/PsdPlugin.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/Unity.2D.Animation.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/Unity.2D.Animation.Runtime.ref.dll"
