@@ -1,7 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Threading;
+using System;
 
 public class JewelsControl : MonoBehaviour
 {
@@ -20,12 +24,11 @@ public class JewelsControl : MonoBehaviour
     public bool level4;
     public bool level5;
     public bool level6;
-
+    private int counter;
+    public Text victory;
     private Vector2 fingerUp;
     private Vector2 fingerDown;
-    //comment for pc
-    /*    private Vector2 mouseup;
-        private Vector2 mousedown;*/
+
     private enum State { right = 0, left = 1, up = 2, down = 3 };
     private List<List<int>> queue;
     private int a;
@@ -33,6 +36,7 @@ public class JewelsControl : MonoBehaviour
     {
         if (level1)
         {
+            counter = 0;
             field = new List<List<GameObject>>();
             GameObject tmp = null;
             for (int i = 0; i < 9; i++)
@@ -56,6 +60,7 @@ public class JewelsControl : MonoBehaviour
         }
         else if (level6)
         {
+            counter = 0;
             field = new List<List<GameObject>>();
             GameObject tmp = null;
             for (int i = 0; i < 9; i++)
@@ -73,8 +78,15 @@ public class JewelsControl : MonoBehaviour
             {
                 for (int j = 0; j < 9; j++)
                 {
-                    if ((i != 1 && j != 1) || (i != 4) || (j != 4) || (i != 7 && j != 1) || (i != 1 && j != 7) || (j != 7 && i != 7))
+                    if ((i == 1 && j == 1) || (i == 4 && j == 4) || (i == 7 && j == 1) || (i == 1 && j == 7) || (j == 7 && i == 7))
+                    {
+                        field[i][j] = Instantiate(empty);
+                        field[i][j].tag = "nothing";
+                    }    
+                    else
+                    {
                         spawnNew(i, j);
+                    }
                 }
             }
         }
@@ -115,7 +127,32 @@ public class JewelsControl : MonoBehaviour
     }
 
     void Update()
-    {
+    {//в свапах надо, наверное, к нуллам еще добавить и нофинг
+        if (counter >= 27)
+        {
+            victory.text = "You win!!! \nYour score: " + counter.ToString();
+            Preferences prefs = new Preferences(counter);
+            if (level1)
+                prefs.level = 1;
+            else if (level2)
+                prefs.level = 2;
+            else if (level3)
+                prefs.level = 3;
+            else if (level4)
+                prefs.level = 4;
+            else if (level5)
+                prefs.level = 5;
+            else if (level6)
+                prefs.level = 6;
+            BinaryFormatter binForm = new BinaryFormatter();
+            using (Stream fstr = new FileStream("levelInfo" + prefs.level.ToString() + ".dat", FileMode.Create, FileAccess.Write, FileShare.None))
+            {
+                binForm.Serialize(fstr, prefs);
+            }
+            //надо подумать про файлы на сцене с колодцем
+            //bool[] levels_done = {true, true, false
+            //int levels_done = 2
+        }
         foreach (Touch touch in Input.touches)
         {
             if (touch.phase == TouchPhase.Began)
@@ -180,7 +217,7 @@ public class JewelsControl : MonoBehaviour
                 break;
         }
         if (findTriples())
-            while (findTriples()) { }
+            while (findTriples()) {  }
         else
         {
             StartCoroutine(moveBack(state, i, j));
@@ -257,6 +294,7 @@ public class JewelsControl : MonoBehaviour
                 {
                     //Destroy(field[i[0]][i[1]]);
                     StartCoroutine(slowDestroy(field[i[0]][i[1]]));
+                    counter += 1;
                     field[i[0]][i[1]] = null;
                 }
             }
@@ -271,11 +309,11 @@ public class JewelsControl : MonoBehaviour
                         int tmp = j + 1;
                         if (tmp == field[0].Count)
                             tmp--;
-                        while (field[i][tmp] == null && tmp < field[0].Count - 1)
+                        while ((field[i][tmp] == null || field[i][tmp].tag == "nothing") && tmp < field[0].Count - 1)
                             tmp++;
                         if (tmp == field[0].Count - 1)
                         {
-                            if (field[i][tmp] != null)
+                            if (field[i][tmp] != null && field[i][tmp].tag != "nothing")
                             {
                                 field[i][j] = field[i][tmp];
                                 //field[i][j].transform.position = new Vector3(i, j, 0f);
@@ -312,7 +350,7 @@ public class JewelsControl : MonoBehaviour
         GameObject tmp = null;
         field[i1][j1] = Instantiate(empty);
         field[i1][j1].transform.position = new Vector3(i1, j1, 0f);
-        switch (Random.Range(0, 7))
+        switch (UnityEngine.Random.Range(0, 7))
         {
             case 0:
                 tmp = Instantiate(blue);
@@ -405,23 +443,35 @@ public class JewelsControl : MonoBehaviour
 
     IEnumerator moveDown(GameObject moveable, int i, int j, int tmp)
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.7f);
         moveable.transform.position = new Vector3(i, j, 0f);
         moveable.GetComponentInChildren<Animator>().Play("layer.MoveDown" + (tmp - j), 0, 0f);
     }
 
     IEnumerator slowAppear(GameObject tmp)
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.7f);
         tmp.GetComponentInChildren<Animator>().Play("layer.Spawn", 0, 0f);
     }
 
     IEnumerator slowDestroy(GameObject tmp)
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.7f);
         tmp.GetComponentInChildren<Animator>().Play("layer.Destroy", 0, 0f);
         yield return new WaitForSeconds(0.5f);
         Destroy(tmp);
     }
 
+}
+
+[Serializable]
+public class Preferences
+{
+    public int counter;
+    public int level;
+
+    public Preferences(int counter)
+    {
+        this.counter = counter;
+    }
 }

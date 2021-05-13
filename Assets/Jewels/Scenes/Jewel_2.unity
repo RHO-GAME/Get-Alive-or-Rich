@@ -170,6 +170,13 @@ MonoBehaviour:
   red: {fileID: 7304173727448821559, guid: 727dcad298c568646ae3313d7092b3cd, type: 3}
   yellow: {fileID: 7096514953115161026, guid: 07d978cedf23e6a45af7c9fdfccbd253, type: 3}
   empty: {fileID: 1976984025}
+  level1: 0
+  level2: 1
+  level3: 0
+  level4: 0
+  level5: 0
+  level6: 0
+  victory: {fileID: 0}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
