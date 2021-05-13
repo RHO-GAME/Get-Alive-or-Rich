@@ -59,6 +59,7 @@
     <Compile Include="Assets\Main\Scripts\ButtonController.cs" />
     <Compile Include="Assets\Jewels\Sсripts\JewelsControl.cs" />
     <Compile Include="Assets\Main\Scripts\StartLevel.cs" />
+    <Compile Include="Assets\2048ku\Scripts\Conroller2048.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

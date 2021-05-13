@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Jewels/Scenes/Jewel_2.unity
+- path: Assets/2048ku/Scenes/2048ku_1.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

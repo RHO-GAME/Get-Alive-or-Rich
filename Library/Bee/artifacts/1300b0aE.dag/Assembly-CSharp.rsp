@@ -353,6 +353,7 @@
 -r:"Library/Bee/artifacts/1300b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/UnityEngine.UI.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/VSSettingsProvider.ref.dll"
+"Assets/2048ku/Scripts/Conroller2048.cs"
 "Assets/Jewels/Sсripts/JewelsControl.cs"
 "Assets/Main/Scripts/ButtonController.cs"
 "Assets/Main/Scripts/StartLevel.cs"
