@@ -11,4 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Jewels/Scenes/Jewel_1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Jewels/Scenes/Jewel_2.unity
+    guid: 46b6fca47f562d841af75381b4b6226f
+  - enabled: 1
+    path: Assets/Jewels/Scenes/Jewel_6.unity
+    guid: 5f8adc77a1710bd4ca90956c74217902
+  - enabled: 1
+    path: Assets/2048ku/Scenes/2048ku_1.unity
+    guid: 226c97096e09ea743a3eac5c972d6612
   m_configObjects: {}

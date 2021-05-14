@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Threading;
 using System;
+using UnityEngine.SceneManagement;
+
 
 public class JewelsControl : MonoBehaviour
 {
@@ -55,6 +54,103 @@ public class JewelsControl : MonoBehaviour
                 for (int j = 0; j < 9; j++)
                 {
                     spawnNew(i, j);
+                }
+            }
+        }
+        else if (level2)
+        {
+            counter = 0;
+            field = new List<List<GameObject>>();
+            GameObject tmp = null;
+            for (int i = 0; i < 9; i++)
+            {
+                field.Add(new List<GameObject>());
+                for (int j = 0; j < 9; j++)
+                {
+                    field[i].Add(null);
+                }
+            }
+
+            #region заглушки
+            field[0][0] = Instantiate(empty);
+            field[0][0].tag = "nothing";
+
+            field[1][0] = Instantiate(empty);
+            field[1][0].tag = "nothing";
+
+            field[2][0] = Instantiate(empty);
+            field[2][0].tag = "nothing";
+
+            field[0][1] = Instantiate(empty);
+            field[0][1].tag = "nothing";
+
+            field[0][2] = Instantiate(empty);
+            field[0][2].tag = "nothing";
+
+            field[1][1] = Instantiate(empty);
+            field[1][1].tag = "nothing";
+
+            field[8][8] = Instantiate(empty);
+            field[8][8].tag = "nothing";
+
+            field[8][7] = Instantiate(empty);
+            field[8][7].tag = "nothing";
+
+            field[8][6] = Instantiate(empty);
+            field[8][6].tag = "nothing";
+
+            field[7][8] = Instantiate(empty);
+            field[7][8].tag = "nothing";
+
+            field[6][8] = Instantiate(empty);
+            field[6][8].tag = "nothing";
+
+            field[7][7] = Instantiate(empty);
+            field[7][7].tag = "nothing";
+
+            field[0][8] = Instantiate(empty);
+            field[0][8].tag = "nothing";
+
+            field[0][7] = Instantiate(empty);
+            field[0][7].tag = "nothing";
+
+            field[0][6] = Instantiate(empty);
+            field[0][6].tag = "nothing";
+
+            field[1][8] = Instantiate(empty);
+            field[1][8].tag = "nothing";
+
+            field[2][8] = Instantiate(empty);
+            field[2][8].tag = "nothing";
+
+            field[1][7] = Instantiate(empty);
+            field[1][7].tag = "nothing";
+
+            field[8][0] = Instantiate(empty);
+            field[8][0].tag = "nothing";
+
+            field[7][0] = Instantiate(empty);
+            field[7][0].tag = "nothing";
+
+            field[6][0] = Instantiate(empty);
+            field[6][0].tag = "nothing";
+
+            field[8][1] = Instantiate(empty);
+            field[8][1].tag = "nothing";
+
+            field[8][2] = Instantiate(empty);
+            field[8][2].tag = "nothing";
+
+            field[7][1] = Instantiate(empty);
+            field[7][1].tag = "nothing";
+            #endregion
+
+            for (int i = 0; i < 9; i++)
+            {
+                for (int j = 0; j < 9; j++)
+                {
+                    if (field[i][j] == null)
+                        spawnNew(i, j);
                 }
             }
         }
@@ -130,7 +226,8 @@ public class JewelsControl : MonoBehaviour
     {//в свапах надо, наверное, к нуллам еще добавить и нофинг
         if (counter >= 27)
         {
-            victory.text = "You win!!! \nYour score: " + counter.ToString();
+            Debug.Log("Victory");
+            //victory.text = "You win!!! \nYour score: " + counter.ToString();
             Preferences prefs = new Preferences(counter);
             if (level1)
                 prefs.level = 1;
@@ -144,11 +241,12 @@ public class JewelsControl : MonoBehaviour
                 prefs.level = 5;
             else if (level6)
                 prefs.level = 6;
-            BinaryFormatter binForm = new BinaryFormatter();
-            using (Stream fstr = new FileStream("levelInfo" + prefs.level.ToString() + ".dat", FileMode.Create, FileAccess.Write, FileShare.None))
-            {
-                binForm.Serialize(fstr, prefs);
-            }
+            PlayerPrefs.SetInt("level", prefs.level);
+            PlayerPrefs.SetInt("counter" + prefs.level.ToString(), prefs.counter);
+            if (prefs.level == 1)
+                SceneManager.LoadScene(3);
+            else
+                SceneManager.LoadScene(4);
             //надо подумать про файлы на сцене с колодцем
             //bool[] levels_done = {true, true, false
             //int levels_done = 2

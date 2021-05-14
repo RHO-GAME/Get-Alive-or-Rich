@@ -16,8 +16,7 @@ public class Conroller2048 : MonoBehaviour
     private int xSize = 8;
     private int ySize = 8;
     private Pattern[] potentialPatterns;
-    private Vector2 fingerUp;
-    private Vector2 fingerDown;
+    private Vector3 fingerDown;
     private Pattern movable = null;
 
     // Start is called before the first frame update
@@ -39,9 +38,10 @@ public class Conroller2048 : MonoBehaviour
     {
         foreach (Touch touch in Input.touches)
         {
-            if (touch.phase == TouchPhase.Began && movable != null)
+            if (touch.phase == TouchPhase.Began && movable == null)
             {
                 fingerDown = Camera.main.ScreenToWorldPoint(touch.position);
+                Debug.Log("First touch" + fingerDown.x.ToString() + "  " + fingerDown.y);
                 foreach (Pattern i in potentialPatterns)
                 {
                     bool flag = false;
@@ -57,8 +57,9 @@ public class Conroller2048 : MonoBehaviour
             }
             else if (touch.phase == TouchPhase.Moved && movable != null)
             {
-                movable.move(fingerDown - touch.position);
-                fingerDown = touch.position;
+                Debug.Log("Moved touch" + fingerDown.x.ToString() + "  " + fingerDown.y);
+                movable.move(Camera.main.ScreenToWorldPoint(touch.position) - fingerDown);
+                fingerDown = Camera.main.ScreenToWorldPoint(touch.position);
             }
             else if (touch.phase == TouchPhase.Ended)
             {
