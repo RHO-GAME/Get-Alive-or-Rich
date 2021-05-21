@@ -22,8 +22,6 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
     - UnityEditor.Tilemaps.TilemapPrefabStageHelper
-    Unity.Mobile.AndroidLogcat.Editor.dll:
-    - Unity.Android.Logcat.AndroidLogcatManager
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     UnityEditor.Graphs.dll:
@@ -71,7 +69,7 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 6322}
+      Script: {instanceID: 6302}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -110,15 +108,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1520}
     - Class: 114
-      Script: {instanceID: 2670}
+      Script: {instanceID: 2650}
     - Class: 114
-      Script: {instanceID: 2886}
+      Script: {instanceID: 2866}
     - Class: 114
-      Script: {instanceID: 3732}
+      Script: {instanceID: 3712}
     - Class: 114
-      Script: {instanceID: 5974}
+      Script: {instanceID: 5954}
     - Class: 114
-      Script: {instanceID: 6504}
+      Script: {instanceID: 6484}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -163,15 +161,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1520}
     - Class: 114
-      Script: {instanceID: 2670}
+      Script: {instanceID: 2650}
     - Class: 114
-      Script: {instanceID: 2886}
+      Script: {instanceID: 2866}
     - Class: 114
-      Script: {instanceID: 3732}
+      Script: {instanceID: 3712}
     - Class: 114
-      Script: {instanceID: 5974}
+      Script: {instanceID: 5954}
     - Class: 114
-      Script: {instanceID: 6504}
+      Script: {instanceID: 6484}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -188,7 +186,7 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 224
       Script: {instanceID: 0}
-    Assets/Jewels/Scenes/Jewel_6.unity:
+    Assets/Jewels/Scenes/Jewel_3.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -214,15 +212,66 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1520}
     - Class: 114
-      Script: {instanceID: 2670}
+      Script: {instanceID: 2650}
     - Class: 114
-      Script: {instanceID: 2886}
+      Script: {instanceID: 2866}
     - Class: 114
-      Script: {instanceID: 3732}
+      Script: {instanceID: 3712}
     - Class: 114
-      Script: {instanceID: 5974}
+      Script: {instanceID: 5954}
     - Class: 114
-      Script: {instanceID: 6504}
+      Script: {instanceID: 6484}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Jewels/Scenes/Jewel_4.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1520}
+    - Class: 114
+      Script: {instanceID: 2650}
+    - Class: 114
+      Script: {instanceID: 2866}
+    - Class: 114
+      Script: {instanceID: 3712}
+    - Class: 114
+      Script: {instanceID: 5954}
+    - Class: 114
+      Script: {instanceID: 6484}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -269,21 +318,21 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1520}
     - Class: 114
-      Script: {instanceID: 1640}
+      Script: {instanceID: 1620}
     - Class: 114
-      Script: {instanceID: 2566}
+      Script: {instanceID: 2546}
     - Class: 114
-      Script: {instanceID: 2670}
+      Script: {instanceID: 2650}
     - Class: 114
-      Script: {instanceID: 2886}
+      Script: {instanceID: 2866}
     - Class: 114
-      Script: {instanceID: 3182}
+      Script: {instanceID: 3162}
     - Class: 114
-      Script: {instanceID: 5730}
+      Script: {instanceID: 5710}
     - Class: 114
-      Script: {instanceID: 5974}
+      Script: {instanceID: 5954}
     - Class: 114
-      Script: {instanceID: 6504}
+      Script: {instanceID: 6484}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -655,7 +704,7 @@ ScriptsOnlyBuild:
     className: UnityOnCollisionExit2DMessageListener
   - hash:
       serializedVersion: 2
-      Hash: b1ac26d67db4e531ac9bfc70ff480152
+      Hash: 2726516d7873dcc875ea570d11f699d5
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: JewelsControl
@@ -1228,6 +1277,7 @@ ScriptsOnlyBuild:
   - Assets/Main/MainGame.unity
   - Assets/Jewels/Scenes/Jewel_1.unity
   - Assets/Jewels/Scenes/Jewel_2.unity
-  - Assets/Jewels/Scenes/Jewel_6.unity
+  - Assets/Jewels/Scenes/Jewel_3.unity
+  - Assets/Jewels/Scenes/Jewel_4.unity
   - Assets/2048ku/Scenes/2048ku_1.unity
-  playerPath: A:/Projects/Get-Alive-or-Rich/gaor.apk
+  playerPath: C:/Users/Roman/Desktop/gaor.apk

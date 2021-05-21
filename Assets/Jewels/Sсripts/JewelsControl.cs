@@ -21,8 +21,6 @@ public class JewelsControl : MonoBehaviour
     public bool level2;
     public bool level3;
     public bool level4;
-    public bool level5;
-    public bool level6;
     private int counter;
     public Text victory;
     private Vector2 fingerUp;
@@ -43,10 +41,7 @@ public class JewelsControl : MonoBehaviour
                 field.Add(new List<GameObject>());
                 for (int j = 0; j < 9; j++)
                 {
-                    /*field[i].Add(Instantiate(empty));
-                    field[i][j].transform.position = new Vector3(i, j, 0f);*/
                     field[i].Add(null);
-                    //spawnNew(i, j);
                 }
             }
             for (int i = 0; i < 9; i++)
@@ -154,7 +149,7 @@ public class JewelsControl : MonoBehaviour
                 }
             }
         }
-        else if (level6)
+        else if (level3)
         {
             counter = 0;
             field = new List<List<GameObject>>();
@@ -164,10 +159,171 @@ public class JewelsControl : MonoBehaviour
                 field.Add(new List<GameObject>());
                 for (int j = 0; j < 9; j++)
                 {
-                    /*field[i].Add(Instantiate(empty));
-                    field[i][j].transform.position = new Vector3(i, j, 0f);*/
                     field[i].Add(null);
-                    //spawnNew(i, j);
+                }
+            }
+
+            #region заглушки
+            field[0][0] = Instantiate(empty);
+            field[0][0].tag = "nothing";
+
+            field[1][0] = Instantiate(empty);
+            field[1][0].tag = "nothing";
+
+            field[2][0] = Instantiate(empty);
+            field[2][0].tag = "nothing";
+
+            field[3][0] = Instantiate(empty);
+            field[3][0].tag = "nothing";
+
+
+
+            field[0][1] = Instantiate(empty);
+            field[0][1].tag = "nothing";
+
+            field[0][2] = Instantiate(empty);
+            field[0][2].tag = "nothing";
+
+            field[0][3] = Instantiate(empty);
+            field[0][3].tag = "nothing";
+
+
+
+            field[1][1] = Instantiate(empty);
+            field[1][1].tag = "nothing";
+
+            field[1][2] = Instantiate(empty);
+            field[1][2].tag = "nothing";
+
+            field[2][1] = Instantiate(empty);
+            field[2][1].tag = "nothing";
+
+            field[1][6] = Instantiate(empty);
+            field[1][6].tag = "nothing";
+
+            field[6][1] = Instantiate(empty);
+            field[6][1].tag = "nothing";
+
+
+            field[8][8] = Instantiate(empty);
+            field[8][8].tag = "nothing";
+
+            field[8][7] = Instantiate(empty);
+            field[8][7].tag = "nothing";
+
+            field[8][6] = Instantiate(empty);
+            field[8][6].tag = "nothing";
+
+            field[8][5] = Instantiate(empty);
+            field[8][5].tag = "nothing";
+
+
+            field[7][8] = Instantiate(empty);
+            field[7][8].tag = "nothing";
+
+            field[6][8] = Instantiate(empty);
+            field[6][8].tag = "nothing";
+
+            field[5][8] = Instantiate(empty);
+            field[5][8].tag = "nothing";
+
+            field[6][7] = Instantiate(empty);
+            field[6][7].tag = "nothing";
+
+            field[7][6] = Instantiate(empty);
+            field[7][6].tag = "nothing";
+
+
+            field[7][7] = Instantiate(empty);
+            field[7][7].tag = "nothing";
+
+            field[0][8] = Instantiate(empty);
+            field[0][8].tag = "nothing";
+
+            field[0][7] = Instantiate(empty);
+            field[0][7].tag = "nothing";
+
+            field[0][6] = Instantiate(empty);
+            field[0][6].tag = "nothing";
+
+            field[0][5] = Instantiate(empty);
+            field[0][5].tag = "nothing";
+
+
+            field[1][8] = Instantiate(empty);
+            field[1][8].tag = "nothing";
+
+            field[2][8] = Instantiate(empty);
+            field[2][8].tag = "nothing";
+
+            field[3][8] = Instantiate(empty);
+            field[3][8].tag = "nothing";
+
+            field[1][7] = Instantiate(empty);
+            field[1][7].tag = "nothing";
+
+            field[7][2] = Instantiate(empty);
+            field[7][2].tag = "nothing";
+
+            field[2][7] = Instantiate(empty);
+            field[2][7].tag = "nothing";
+
+
+            field[8][0] = Instantiate(empty);
+            field[8][0].tag = "nothing";
+
+            field[7][0] = Instantiate(empty);
+            field[7][0].tag = "nothing";
+
+            field[6][0] = Instantiate(empty);
+            field[6][0].tag = "nothing";
+
+            field[5][0] = Instantiate(empty);
+            field[5][0].tag = "nothing";
+
+
+            field[8][1] = Instantiate(empty);
+            field[8][1].tag = "nothing";
+
+            field[8][2] = Instantiate(empty);
+            field[8][2].tag = "nothing";
+
+            field[8][3] = Instantiate(empty);
+            field[8][3].tag = "nothing";
+
+            field[7][2] = Instantiate(empty);
+            field[7][2].tag = "nothing";
+
+            field[2][7] = Instantiate(empty);
+            field[2][7].tag = "nothing";
+
+
+            field[7][1] = Instantiate(empty);
+            field[7][1].tag = "nothing";
+
+
+            #endregion
+
+            for (int i = 0; i < 9; i++)
+            {
+                for (int j = 0; j < 9; j++)
+                {
+                    if (field[i][j] == null)
+                        spawnNew(i, j);
+                }
+            }
+        }
+        else if (level4)
+        {
+            counter = 0;
+            field = new List<List<GameObject>>();
+            GameObject tmp = null;
+            for (int i = 0; i < 9; i++)
+            {
+                field.Add(new List<GameObject>());
+                for (int j = 0; j < 9; j++)
+                {
+                    field[i].Add(null);
                 }
             }
             for (int i = 0; i < 9; i++)
@@ -186,39 +342,6 @@ public class JewelsControl : MonoBehaviour
                 }
             }
         }
-        /*queue = new List<List<int>>();
-        int i1 = -1;
-        int j1 = 0;
-        int sign = 1;
-        int length = 9;
-        int count;
-        while (i1 != 4 && j1 != 4)
-        {
-            count = 0;
-            i1 += sign;
-            while (count < length)
-            {
-                spawnNew(i1, j1);
-                queue.Add(new List<int>() { i1, j1 });
-                i1 += sign;
-                count++;
-            }
-            count = 0;
-            length--;
-            i1 -= sign;
-            j1 += sign;
-            while (count < length)
-            {
-                spawnNew(i1, j1);
-                queue.Add(new List<int>() { i1, j1 });
-                j1 += sign;
-                count++;
-            }
-            j1 -= sign;
-            sign *= -1;
-        }
-        spawnNew(4, 4);
-        queue.Add(new List<int>() { 4, 4 });*/
         while (findTriples()) { }
     }
 
@@ -237,16 +360,10 @@ public class JewelsControl : MonoBehaviour
                 prefs.level = 3;
             else if (level4)
                 prefs.level = 4;
-            else if (level5)
-                prefs.level = 5;
-            else if (level6)
-                prefs.level = 6;
+            
             PlayerPrefs.SetInt("level", prefs.level);
             PlayerPrefs.SetInt("counter" + prefs.level.ToString(), prefs.counter);
-            if (prefs.level == 1)
-                SceneManager.LoadScene(3);
-            else
-                SceneManager.LoadScene(4);
+            SceneManager.LoadScene(prefs.level + 1);
             //надо подумать про файлы на сцене с колодцем
             //bool[] levels_done = {true, true, false
             //int levels_done = 2
@@ -263,14 +380,16 @@ public class JewelsControl : MonoBehaviour
 
                 Debug.Log(touch.position.x + " " + touch.position.y);
                 Vector2 pos = Camera.main.ScreenToWorldPoint(fingerDown);
-                for (int i = 0; i < field.Count; i++)
-                {
-                    for (int j = 0; j < field.Count; j++)
+                Vector2 pos1 = Camera.main.ScreenToWorldPoint(fingerUp);
+                if (Math.Abs(pos.x - pos1.x) > 0.5f || Math.Abs(pos.y - pos1.y) > 0.5f)
+                    for (int i = 0; i < field.Count; i++)
                     {
-                        if (Mathf.Abs(i - pos.x) <= 0.5f && Mathf.Abs(j - pos.y) <= 0.5f)
-                            swapObjects(i, j, getSwipeState(fingerDown, fingerUp));
+                        for (int j = 0; j < field.Count; j++)
+                        {
+                            if (Mathf.Abs(i - pos.x) <= 0.5f && Mathf.Abs(j - pos.y) <= 0.5f)
+                                swapObjects(i, j, getSwipeState(fingerDown, fingerUp));
+                        }
                     }
-                }
             }
         }
     }
@@ -363,10 +482,13 @@ public class JewelsControl : MonoBehaviour
                 if (field[i][j] != null && field[i + 1][j] != null && field[i - 1][j] != null)
                     if (field[i][j].tag == field[i + 1][j].tag && field[i][j].tag == field[i - 1][j].tag)
                     {
-                        forDestroy.Add(new List<int>() { i, j });
-                        forDestroy.Add(new List<int>() { i + 1, j });
-                        forDestroy.Add(new List<int>() { i - 1, j });
-                        flag = true;
+                        if (field[i][j].tag != "nothing")
+                        {
+                            forDestroy.Add(new List<int>() { i, j });
+                            forDestroy.Add(new List<int>() { i + 1, j });
+                            forDestroy.Add(new List<int>() { i - 1, j });
+                            flag = true;
+                        }
                     }
             }
         }
@@ -378,10 +500,13 @@ public class JewelsControl : MonoBehaviour
                 if (field[i][j] != null && field[i][j + 1] != null && field[i][j - 1] != null)
                     if (field[i][j].tag == field[i][j + 1].tag && field[i][j].tag == field[i][j - 1].tag)
                     {
-                        forDestroy.Add(new List<int>() { i, j });
-                        forDestroy.Add(new List<int>() { i, j + 1 });
-                        forDestroy.Add(new List<int>() { i, j - 1 });
-                        flag = true;
+                        if (field[i][j].tag != "nothing")
+                        {
+                            forDestroy.Add(new List<int>() { i, j });
+                            forDestroy.Add(new List<int>() { i, j + 1 });
+                            forDestroy.Add(new List<int>() { i, j - 1 });
+                            flag = true;
+                        }
                     }
             }
         }
@@ -390,6 +515,7 @@ public class JewelsControl : MonoBehaviour
             {
                 if (field[i[0]][i[1]] != null)
                 {
+                    if (field[i[0]][i[1]].tag != "nothing")
                     //Destroy(field[i[0]][i[1]]);
                     StartCoroutine(slowDestroy(field[i[0]][i[1]]));
                     counter += 1;

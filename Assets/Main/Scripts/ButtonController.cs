@@ -8,6 +8,6 @@ public class ButtonController : MonoBehaviour
 {
     public void onClick_Play()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(PlayerPrefs.GetInt("level", 0) + 1);
     }
 }
